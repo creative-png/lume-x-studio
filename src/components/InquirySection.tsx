@@ -48,7 +48,7 @@ export const InquirySection: React.FC<InquirySectionProps> = ({ selectedPackage 
         >
           <div>
             <label htmlFor="n" className="text-[12px] sm:text-[13px] tracking-[0.08em] text-[#b4a9b0] block mb-1 font-light">
-              Your names
+              Couple's names
             </label>
             <input
               id="n"
