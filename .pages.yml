@@ -1,0 +1,40 @@
+media:
+  input: images
+  output: /images
+content:
+  - name: site
+    label: Website details
+    type: file
+    path: site.json
+    format: json
+    fields:
+      - name: name
+        label: Business name
+        type: string
+      - name: city
+        label: City
+        type: string
+      - name: whatsapp
+        label: WhatsApp number (91XXXXXXXXXX)
+        type: string
+      - name: phone
+        label: Phone number
+        type: string
+      - name: hero
+        label: Main photo
+        type: image
+      - name: gallery
+        label: Gallery photos
+        type: image
+        list: true
+      - name: packages
+        label: Packages
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Package name
+            type: string
+          - name: price
+            label: Price
+            type: string
