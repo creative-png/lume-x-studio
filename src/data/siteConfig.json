@@ -1,396 +1,105 @@
-{
-  "owner": {
-    "name": "LUMÉ STUDIO",
-    "tagline": "Wedding Photography & Films",
-    "leadPhotographer": "Creative Direction by Lumé Team",
-    "email": "ash2k21@xgmail.com",
-    "phone": "+91 8638683167",
-    "whatsappNumber": "918638683167",
-    "locations": "Mumbai · Goa · Rajasthan · Worldwide",
-    "instagram": "https://instagram.com",
-    "pinterest": "https://pinterest.com",
-    "vimeo": "https://vimeo.com",
-    "demoNote": "Demo note: the reviews, names, contact details and business information are fictional placeholders."
-  },
-  "hero": {
-    "kicker": "Wedding photography · Films · Destinations — Mumbai, India & worldwide",
-    "title": "Love, in its most honest light.",
-    "underlineText": "honest light.",
-    "lead": "Contemporary wedding photography for couples who want their celebration documented with intention, emotion and a distinctly editorial eye.",
-    "backgroundImage": "/src/assets/images/hero_couple_black_sky_1790936497370.jpg",
-    "ctaWork": "View our work",
-    "ctaDate": "Check your date",
-    "verticalMeta": "MUMBAI · INDIA · WORLDWIDE"
-  },
-  "work": {
-    "kicker": "The work",
-    "title": "A collection of stories, beautifully observed.",
-    "lead": "From quiet morning rituals to the chaos of the dance floor, we document weddings as they actually unfold — naturally, thoughtfully and without unnecessary staging.",
-    "stories": [
-      {
-        "id": "amara-veer",
-        "number": "01",
-        "couple": "Amara & Veer",
-        "location": "Umaid Bhawan Palace, Jodhpur",
-        "description": "A three-day celebration surrounded by sandstone architecture, candlelight and family traditions.",
-        "coverImage": "/src/assets/images/jodhpur_baraat_1790951596622.jpg",
-        "coverage": "Three days",
-        "collection": "The Signature",
-        "tagline": "Sandstone architecture, candlelight and three generations gathered.",
-        "narrative": "From the haldi courtyard to the last sangeet song, we followed the family through three days at the palace, letting the architecture and the natural available light lead the frames.",
-        "quote": {
-          "text": "Every photograph feels like a frame from a beautiful film. Nothing felt forced or overly posed. They somehow captured all the little moments we completely missed on the day.",
-          "author": "Aanya Mehta · Amara & Veer"
-        },
-        "galleryImages": [
-          {
-            "url": "/src/assets/images/wedding_amara_jodhpur_1790871722386.jpg",
-            "caption": "The twilight phera ceremony framed by the grand sandstone arches of Umaid Bhawan."
-          },
-          {
-            "url": "/src/assets/images/jodhpur_baraat_1790951596622.jpg",
-            "caption": "The majestic baraat procession arriving across the sandstone palace courtyard."
-          },
-          {
-            "url": "/src/assets/images/wedding_detail_candid_1790871788234.jpg",
-            "caption": "Nervous hands and ancestral heirloom kundan gold moments before the ceremony."
-          },
-          {
-            "url": "/src/assets/images/haldi_marigold_1790951643568.jpg",
-            "caption": "Joyful laughter and flying marigold petals during the morning haldi ritual."
-          },
-          {
-            "url": "/src/assets/images/hero_couple_black_sky_1790936497370.jpg",
-            "caption": "Stolen midnight moment under the starry night sky on the palace terrace."
-          },
-          {
-            "url": "/src/assets/images/hero_wedding_editorial_1790871702259.jpg",
-            "caption": "Editorial portrait of the couple walking through the candlelit corridors."
-          },
-          {
-            "url": "/src/assets/images/wedding_fine_album_1790871804451.jpg",
-            "caption": "The bespoke linen heirloom album preserving 400 archival prints."
-          },
-          {
-            "url": "/src/assets/images/udaipur_boat_1790951620846.jpg",
-            "caption": "Reflections of royal lamps across the tranquil palace courtyard waters."
-          },
-          {
-            "url": "/src/assets/images/sangeet_dance_1790952675493.jpg",
-            "caption": "Twirling under celebratory fairy lights during the midnight sangeet."
-          },
-          {
-            "url": "/src/assets/images/mandap_twilight_1790952662171.jpg",
-            "caption": "Majestic candlelit mandap under grand twilight palace skies."
-          }
-        ]
-      },
-      {
-        "id": "isha-arjun",
-        "number": "02",
-        "couple": "Isha & Arjun",
-        "location": "Alibaug, Maharashtra",
-        "description": "A coastal celebration where monsoon skies became part of the story.",
-        "coverImage": "/src/assets/images/wedding_isha_alibaug_1790871739251.jpg",
-        "coverage": "Full day",
-        "collection": "The Editorial",
-        "tagline": "Monsoon clouds, salt air, and honest joy across the Arabian Sea.",
-        "narrative": "The monsoon rain arrived mid-ceremony and nobody moved. We kept shooting, and the grey sea sky ended up giving the day its quiet, unforgettable cinematic mood.",
-        "quote": {
-          "text": "From the first meeting to receiving the final gallery, everything felt incredibly thoughtful. The photographs are elegant without losing the emotion of the day.",
-          "author": "Rohan & Priya · Isha & Arjun"
-        },
-        "galleryImages": [
-          {
-            "url": "/src/assets/images/wedding_isha_alibaug_1790871739251.jpg",
-            "caption": "Walking barefoot along the coastal bluffs as monsoon winds caught the raw silk veil."
-          },
-          {
-            "url": "/src/assets/images/alibaug_coastal_1790951609438.jpg",
-            "caption": "Candid smiles together against the dramatic coastal horizon and misty ocean air."
-          },
-          {
-            "url": "/src/assets/images/haldi_marigold_1790951643568.jpg",
-            "caption": "Sunlit morning haldi celebrations filled with unfiltered family joy."
-          },
-          {
-            "url": "/src/assets/images/wedding_detail_candid_1790871788234.jpg",
-            "caption": "Quiet ritual details and hand-embroidered textures before the pheras."
-          },
-          {
-            "url": "/src/assets/images/mandap_twilight_1790952662171.jpg",
-            "caption": "Glowing coastal mandap with delicate florals and candlelight as dusk settles."
-          },
-          {
-            "url": "/src/assets/images/hero_wedding_editorial_1790871702259.jpg",
-            "caption": "Evening celebration lights reflecting off rain-kissed coastal stone."
-          },
-          {
-            "url": "/src/assets/images/wedding_fine_album_1790871804451.jpg",
-            "caption": "Curated story prints chronologically bound in archival linen."
-          },
-          {
-            "url": "/src/assets/images/goa_sunset_vows_1790951632885.jpg",
-            "caption": "Barefoot laughter along the coastal shorelines as evening dusk settles."
-          },
-          {
-            "url": "/src/assets/images/sangeet_dance_1790952675493.jpg",
-            "caption": "Celebratory dance floor illuminated by rain-washed lanterns."
-          },
-          {
-            "url": "/src/assets/images/hero_couple_black_sky_1790936497370.jpg",
-            "caption": "Quiet twilight horizon overlooking the Arabian sea under deep indigo skies."
-          }
-        ]
-      },
-      {
-        "id": "mira-kabir",
-        "number": "03",
-        "couple": "Mira & Kabir",
-        "location": "The Leela Palace, Udaipur",
-        "description": "An intimate evening ceremony filled with ivory florals, music and candlelight.",
-        "coverImage": "/src/assets/images/udaipur_boat_1790951620846.jpg",
-        "coverage": "One evening",
-        "collection": "The Intimate",
-        "tagline": "Ivory tuberoses, floating candlelight and whispered vows over Lake Pichola.",
-        "narrative": "A small guest list and an unhurried evening. We stayed soft and close, photographing the ivory florals, the live sitar music and the faces in candlelight.",
-        "quote": {
-          "text": "We wanted something modern and natural, and Lumé understood that immediately. The team was practically invisible during the ceremony, but somehow they were everywhere.",
-          "author": "Meera Kapoor · Mira & Kabir"
-        },
-        "galleryImages": [
-          {
-            "url": "/src/assets/images/wedding_mira_udaipur_1790871754583.jpg",
-            "caption": "The floating mandap at midnight on Lake Pichola, surrounded by water and thousands of candles."
-          },
-          {
-            "url": "/src/assets/images/udaipur_boat_1790951620846.jpg",
-            "caption": "Quiet sunset moments on a handcrafted wooden boat surrounded by floating lamps."
-          },
-          {
-            "url": "/src/assets/images/wedding_detail_candid_1790871788234.jpg",
-            "caption": "Tender family moments before the bride steps onto the royal wooden boat."
-          },
-          {
-            "url": "/src/assets/images/hero_wedding_editorial_1790871702259.jpg",
-            "caption": "Illuminated palace archways and delicate ivory floral installations."
-          },
-          {
-            "url": "/src/assets/images/mandap_twilight_1790952662171.jpg",
-            "caption": "Lakeside floral mandap aglow with floating candles under the stars."
-          },
-          {
-            "url": "/src/assets/images/haldi_marigold_1790951643568.jpg",
-            "caption": "Spontaneous laughter shared with childhood friends in the lakeside courtyard."
-          },
-          {
-            "url": "/src/assets/images/wedding_fine_album_1790871804451.jpg",
-            "caption": "Handmade archival cotton rag album bound with gold foil embossing."
-          },
-          {
-            "url": "/src/assets/images/jodhpur_baraat_1790951596622.jpg",
-            "caption": "Palace terrace lit by traditional brass lanterns as night descends over Lake Pichola."
-          },
-          {
-            "url": "/src/assets/images/sangeet_dance_1790952675493.jpg",
-            "caption": "Intimate sitar music and evening courtyard celebration."
-          },
-          {
-            "url": "/src/assets/images/hero_couple_black_sky_1790936497370.jpg",
-            "caption": "Candlelit silhouettes over the shimmering palace waters under the night sky."
-          }
-        ]
-      },
-      {
-        "id": "naina-rishabh",
-        "number": "04",
-        "couple": "Naina & Rishabh",
-        "location": "Goa, India",
-        "description": "46 guests, a private beach, wild florals and one unforgettable weekend.",
-        "coverImage": "/src/assets/images/goa_sunset_vows_1790951632885.jpg",
-        "coverage": "One weekend",
-        "collection": "The Intimate",
-        "tagline": "46 guests, a private beach, wild florals and one unforgettable weekend.",
-        "narrative": "Bare feet, warm sea air and wild florals. With only 46 guests, every single photograph is of someone who truly mattered to the couple.",
-        "quote": {
-          "text": "Our wedding film made us emotional all over again. The audio from our vows and our parents' speeches was such a beautiful touch.",
-          "author": "Tara & Kabir · Naina & Rishabh"
-        },
-        "galleryImages": [
-          {
-            "url": "/src/assets/images/wedding_naina_goa_1790871769912.jpg",
-            "caption": "Golden hour sunset celebration as 46 close friends and family cheered under ocean skies."
-          },
-          {
-            "url": "/src/assets/images/goa_sunset_vows_1790951632885.jpg",
-            "caption": "Barefoot vows exchanged in the warm sand beside wild pampas and driftwood florals."
-          },
-          {
-            "url": "/src/assets/images/haldi_marigold_1790951643568.jpg",
-            "caption": "Playful seaside haldi ceremony with yellow petals scattered by the sea breeze."
-          },
-          {
-            "url": "/src/assets/images/wedding_detail_candid_1790871788234.jpg",
-            "caption": "Seashells, delicate gold jewelry, and handwritten vows written in sea air."
-          },
-          {
-            "url": "/src/assets/images/mandap_twilight_1790952662171.jpg",
-            "caption": "Beachfront driftwood mandap glowing under the warm sunset horizon."
-          },
-          {
-            "url": "/src/assets/images/hero_wedding_editorial_1790871702259.jpg",
-            "caption": "Intimate evening dinner by fairy-lit palm trees and ocean sounds."
-          },
-          {
-            "url": "/src/assets/images/wedding_fine_album_1790871804451.jpg",
-            "caption": "Fine-art linen album bound with textured Japanese archival paper."
-          },
-          {
-            "url": "/src/assets/images/alibaug_coastal_1790951609438.jpg",
-            "caption": "Gentle sea breeze and golden sunlight wrapping around the couple on the beach bluff."
-          },
-          {
-            "url": "/src/assets/images/sangeet_dance_1790952675493.jpg",
-            "caption": "Barefoot dancing in the sand under strings of festive seaside lanterns."
-          },
-          {
-            "url": "/src/assets/images/hero_couple_black_sky_1790936497370.jpg",
-            "caption": "Starry midnight bonfire dance floor by the ocean with 46 closest people."
-          }
-        ]
-      }
-    ]
-  },
-  "reviews": {
-    "kicker": "Google reviews",
-    "rating": "5.0",
-    "stars": "★★★★★",
-    "totalCount": 87,
-    "subtitle": "Based on 87 Google reviews",
-    "list": [
-      {
-        "id": "r1",
-        "name": "Aanya Mehta",
-        "timeAgo": "2 months ago",
-        "text": "Every photograph feels like a frame from a beautiful film. Nothing felt forced or overly posed. They somehow captured all the little moments we completely missed on the day."
-      },
-      {
-        "id": "r2",
-        "name": "Rohan & Priya",
-        "timeAgo": "4 months ago",
-        "text": "From the first meeting to receiving the final gallery, everything felt incredibly thoughtful. The photographs are elegant without losing the emotion of the day."
-      },
-      {
-        "id": "r3",
-        "name": "Karan & Ishita",
-        "timeAgo": "6 months ago",
-        "text": "They didn't just take photos, they told our story. Every image feels so alive, candid and full of feeling. We'll cherish these forever."
-      },
-      {
-        "id": "r4",
-        "name": "Neha & Arjun",
-        "timeAgo": "5 months ago",
-        "text": "Professional, calm and a joy to work with. They made us feel so comfortable and the results exceeded everything we imagined. Truly timeless work."
-      }
-    ]
-  },
-  "why": {
-    "kicker": "Why Lumé",
-    "title": "Not just the big moments.",
-    "moments": [
-      "The nervous hands before the ceremony.",
-      "Your mother's expression when she sees you dressed.",
-      "A friend laughing in the corner.",
-      "The empty dance floor at 2 AM.",
-      "The last hug before everyone leaves."
-    ],
-    "conclusion": "Those are the photographs we look for.",
-    "steps": [
-      {
-        "title": "Before",
-        "description": "We get to know your story, your people and the atmosphere you're imagining."
-      },
-      {
-        "title": "During",
-        "description": "We photograph naturally, stepping in only when direction genuinely adds something."
-      },
-      {
-        "title": "After",
-        "description": "Every photograph is carefully selected, colour-finished and curated into a visual story."
-      }
-    ]
-  },
-  "collections": {
-    "kicker": "Collections",
-    "title": "Three ways to be photographed.",
-    "note": "Destination celebrations are available on request.",
-    "packages": [
-      {
-        "name": "The Signature",
-        "price": "₹2,85,000 onwards",
-        "featured": true,
-        "coverImage": "/src/assets/images/wedding_fine_album_1790871804451.jpg",
-        "items": [
-          "Three-day wedding coverage",
-          "Two photographers",
-          "Wedding film",
-          "Pre-wedding session",
-          "Fine-art album",
-          "Private online gallery"
-        ]
-      },
-      {
-        "name": "The Editorial",
-        "price": "₹1,65,000 onwards",
-        "featured": false,
-        "coverImage": "/src/assets/images/alibaug_coastal_1790951609438.jpg",
-        "items": [
-          "Full-day photography",
-          "Two photographers",
-          "Portrait session",
-          "Private online gallery",
-          "Fine-art prints"
-        ]
-      },
-      {
-        "name": "The Intimate",
-        "price": "₹95,000 onwards",
-        "featured": false,
-        "coverImage": "/src/assets/images/mandap_twilight_1790952662171.jpg",
-        "items": [
-          "Up to 8 hours",
-          "Lead photographer + assistant",
-          "Online gallery",
-          "High-resolution photographs"
-        ]
-      }
-    ]
-  },
-  "faq": {
-    "kicker": "Good to know",
-    "title": "Questions couples ask us.",
-    "questions": [
-      {
-        "q": "How far ahead should we book?",
-        "a": "Most couples reach out 8 to 12 months ahead. We accept a limited number of celebrations each year, so peak wedding dates go first."
-      },
-      {
-        "q": "Do you travel for weddings?",
-        "a": "Yes. We shoot across India and worldwide. Destination quotes include travel and stay and are shared on request."
-      },
-      {
-        "q": "When do we receive our photographs?",
-        "a": "Every photograph is selected and colour-finished by hand. Share your date and we'll confirm delivery timelines for your collection."
-      },
-      {
-        "q": "How do we confirm a date?",
-        "a": "Send us your date, venue and a little about your plans. We reply personally, then lock the date with a booking agreement."
-      }
-    ]
-  },
-  "contact": {
-    "kicker": "Check your date",
-    "title": "Your date is the only thing we need.",
-    "lead": "We accept a limited number of celebrations each year. Tell us your date, destination and a little about what you're planning."
-  }
-}
+media:
+  input: public/images   # CHANGE: use images if plain HTML
+  output: /images
+content:
+  - name: site
+    label: Website content
+    type: file
+    path: src/siteConfig.json   # CHANGE to your real path
+    format: json
+    fields:
+      - name: owner
+        label: Business details
+        type: object
+        fields:
+          - { name: name, label: Business name, type: string }
+          - { name: tagline, label: Tagline, type: string }
+          - { name: leadPhotographer, label: Credit line, type: string }
+          - { name: email, label: Email, type: string }
+          - { name: phone, label: Phone, type: string }
+          - { name: whatsappNumber, label: WhatsApp number (91XXXXXXXXXX), type: string }
+          - { name: locations, label: Locations, type: string }
+          - { name: instagram, label: Instagram link, type: string }
+          - { name: pinterest, label: Pinterest link, type: string }
+          - { name: vimeo, label: Vimeo link, type: string }
+          - { name: demoNote, label: Demo note, type: text }
+      - name: hero
+        label: Hero section
+        type: object
+        fields:
+          - { name: kicker, label: Small top text, type: string }
+          - { name: title, label: Main title, type: string }
+          - { name: underlineText, label: Underlined part (must be inside title), type: string }
+          - { name: lead, label: Intro paragraph, type: text }
+          - { name: backgroundImage, label: Background photo, type: image }
+          - { name: ctaWork, label: Work button text, type: string }
+          - { name: ctaDate, label: Date button text, type: string }
+          - { name: verticalMeta, label: Side text, type: string }
+      - name: work
+        label: Work and stories
+        type: object
+        fields:
+          - { name: kicker, label: Small top text, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Intro, type: text }
+          - name: stories
+            label: Wedding stories
+            type: object
+            list: true
+            fields:
+              - { name: id, label: ID (no spaces), type: string }
+              - { name: number, label: Number, type: string }
+              - { name: couple, label: Couple names, type: string }
+              - { name: location, label: Location, type: string }
+              - { name: description, label: Short description, type: text }
+              - { name: coverImage, label: Cover photo, type: image }
+              - { name: coverage, label: Coverage, type: string }
+              - { name: collection, label: Collection name, type: string }
+              - { name: tagline, label: Tagline, type: string }
+              - { name: narrative, label: Story, type: text }
+              - name: quote
+                label: Client quote
+                type: object
+                fields:
+                  - { name: text, label: Quote, type: text }
+                  - { name: author, label: Author, type: string }
+              - name: galleryImages
+                label: Gallery photos
+                type: object
+                list: true
+                fields:
+                  - { name: url, label: Photo, type: image }
+                  - { name: caption, label: Caption, type: text }
+      - name: reviews
+        label: Reviews
+        type: object
+        fields:
+          - { name: kicker, label: Small top text, type: string }
+          - { name: rating, label: Rating, type: string }
+          - { name: stars, label: Stars, type: string }
+          - { name: totalCount, label: Total reviews, type: number }
+          - { name: subtitle, label: Subtitle, type: string }
+          - name: list
+            label: Review list
+            type: object
+            list: true
+            fields:
+              - { name: id, label: ID, type: string }
+              - { name: name, label: Reviewer name, type: string }
+              - { name: timeAgo, label: Time ago, type: string }
+              - { name: text, label: Review, type: text }
+      - name: why
+        label: Why us
+        type: object
+        fields:
+          - { name: kicker, label: Small top text, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: moments, label: Moments, type: string, list: true }
+          - { name: conclusion, label: Conclusion, type: string }
+          - name: steps
+            label: Steps
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Step title, type: string }
+              - { name: description, label: Description, type: t
