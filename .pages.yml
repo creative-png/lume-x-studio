@@ -1,40 +1,105 @@
 media:
-  input: images
+  input: public/images   # CHANGE: use images if plain HTML
   output: /images
 content:
   - name: site
-    label: Website details
+    label: Website content
     type: file
-    path: site.json
+    path: src/siteConfig.json   # CHANGE to your real path
     format: json
     fields:
-      - name: name
-        label: Business name
-        type: string
-      - name: city
-        label: City
-        type: string
-      - name: whatsapp
-        label: WhatsApp number (91XXXXXXXXXX)
-        type: string
-      - name: phone
-        label: Phone number
-        type: string
-      - name: hero
-        label: Main photo
-        type: image
-      - name: gallery
-        label: Gallery photos
-        type: image
-        list: true
-      - name: packages
-        label: Packages
+      - name: owner
+        label: Business details
         type: object
-        list: true
         fields:
-          - name: title
-            label: Package name
-            type: string
-          - name: price
-            label: Price
-            type: string
+          - { name: name, label: Business name, type: string }
+          - { name: tagline, label: Tagline, type: string }
+          - { name: leadPhotographer, label: Credit line, type: string }
+          - { name: email, label: Email, type: string }
+          - { name: phone, label: Phone, type: string }
+          - { name: whatsappNumber, label: WhatsApp number (91XXXXXXXXXX), type: string }
+          - { name: locations, label: Locations, type: string }
+          - { name: instagram, label: Instagram link, type: string }
+          - { name: pinterest, label: Pinterest link, type: string }
+          - { name: vimeo, label: Vimeo link, type: string }
+          - { name: demoNote, label: Demo note, type: text }
+      - name: hero
+        label: Hero section
+        type: object
+        fields:
+          - { name: kicker, label: Small top text, type: string }
+          - { name: title, label: Main title, type: string }
+          - { name: underlineText, label: Underlined part (must be inside title), type: string }
+          - { name: lead, label: Intro paragraph, type: text }
+          - { name: backgroundImage, label: Background photo, type: image }
+          - { name: ctaWork, label: Work button text, type: string }
+          - { name: ctaDate, label: Date button text, type: string }
+          - { name: verticalMeta, label: Side text, type: string }
+      - name: work
+        label: Work and stories
+        type: object
+        fields:
+          - { name: kicker, label: Small top text, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Intro, type: text }
+          - name: stories
+            label: Wedding stories
+            type: object
+            list: true
+            fields:
+              - { name: id, label: ID (no spaces), type: string }
+              - { name: number, label: Number, type: string }
+              - { name: couple, label: Couple names, type: string }
+              - { name: location, label: Location, type: string }
+              - { name: description, label: Short description, type: text }
+              - { name: coverImage, label: Cover photo, type: image }
+              - { name: coverage, label: Coverage, type: string }
+              - { name: collection, label: Collection name, type: string }
+              - { name: tagline, label: Tagline, type: string }
+              - { name: narrative, label: Story, type: text }
+              - name: quote
+                label: Client quote
+                type: object
+                fields:
+                  - { name: text, label: Quote, type: text }
+                  - { name: author, label: Author, type: string }
+              - name: galleryImages
+                label: Gallery photos
+                type: object
+                list: true
+                fields:
+                  - { name: url, label: Photo, type: image }
+                  - { name: caption, label: Caption, type: text }
+      - name: reviews
+        label: Reviews
+        type: object
+        fields:
+          - { name: kicker, label: Small top text, type: string }
+          - { name: rating, label: Rating, type: string }
+          - { name: stars, label: Stars, type: string }
+          - { name: totalCount, label: Total reviews, type: number }
+          - { name: subtitle, label: Subtitle, type: string }
+          - name: list
+            label: Review list
+            type: object
+            list: true
+            fields:
+              - { name: id, label: ID, type: string }
+              - { name: name, label: Reviewer name, type: string }
+              - { name: timeAgo, label: Time ago, type: string }
+              - { name: text, label: Review, type: text }
+      - name: why
+        label: Why us
+        type: object
+        fields:
+          - { name: kicker, label: Small top text, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: moments, label: Moments, type: string, list: true }
+          - { name: conclusion, label: Conclusion, type: string }
+          - name: steps
+            label: Steps
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Step title, type: string }
+              - { name: description, label: Description, type: t
