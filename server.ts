@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
 import dotenv from 'dotenv';
 import { GoogleGenAI } from '@google/genai';
 
@@ -13,6 +14,40 @@ const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
 app.use(express.json());
+
+// Helper to read the current siteConfig.json connected to CMS
+function getSiteConfig() {
+  try {
+    const filePath = path.resolve(__dirname, 'src/data/siteConfig.json');
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    }
+  } catch (err) {
+    console.warn('Could not read siteConfig.json:', err);
+  }
+  return null;
+}
+
+// API routes to view and update siteConfig.json
+app.get('/api/config', (_req: Request, res: Response) => {
+  const config = getSiteConfig();
+  if (!config) return res.status(500).json({ error: 'Could not load siteConfig.json' });
+  return res.json(config);
+});
+
+app.post('/api/config', (req: Request, res: Response) => {
+  try {
+    const newConfig = req.body;
+    if (!newConfig || typeof newConfig !== 'object') {
+      return res.status(400).json({ error: 'Invalid configuration payload' });
+    }
+    const filePath = path.resolve(__dirname, 'src/data/siteConfig.json');
+    fs.writeFileSync(filePath, JSON.stringify(newConfig, null, 2), 'utf-8');
+    return res.json({ success: true, message: 'siteConfig.json successfully updated' });
+  } catch (err: any) {
+    return res.status(500).json({ error: err?.message || 'Failed to write siteConfig.json' });
+  }
+});
 
 // Initialize Gemini SDK with telemetry header
 const apiKey = process.env.GEMINI_API_KEY;
@@ -28,15 +63,23 @@ if (apiKey) {
   });
 }
 
-const SYSTEM_INSTRUCTION = `
-You are the AI Concierge for LUMÉ STUDIO, an elite, luxury contemporary wedding photography and cinema studio based in Mumbai, India, documenting destination weddings across India and worldwide.
+function buildSystemInstruction() {
+  const config = getSiteConfig();
+  const name = config?.owner?.name || 'LUMÉ STUDIO';
+  const tagline = config?.hero?.title || 'Love, in its most honest light.';
+  const email = config?.owner?.email || 'ash2k21x@gmail.com';
+  const phone = config?.owner?.phone || '+91 8638683167';
+  const locations = config?.owner?.locations || 'Mumbai, Goa, Rajasthan, and worldwide';
+
+  return `
+You are the AI Concierge for ${name}, an elite luxury contemporary wedding photography and cinema studio documenting destination weddings across ${locations}.
 
 Brand Tone:
 Refined, discerning, warm, poetic yet concise, impeccably professional. Never use corporate slang or excessive robotic pleasantries. Speak like a luxury creative director or studio producer.
 
 Studio Knowledge:
-- Tagline & Essence: "Love, in its most honest light." Contemporary wedding photography for couples who want their celebration documented with intention, emotion, and a distinctly editorial eye without stiff, forced posing.
-- Destinations: Mumbai, Goa, Rajasthan (Umaid Bhawan Palace Jodhpur, The Leela Palace Udaipur, Jaipur, Alila Fort), Alibaug, Kerala, and International (Lake Como, Tuscany, Bali, Dubai, French Riviera).
+- Tagline & Essence: "${tagline}" Contemporary wedding photography for couples who want their celebration documented with intention, emotion, and a distinctly editorial eye without stiff, forced posing.
+- Destinations: ${locations}.
 - Collections:
   1. THE SIGNATURE: ₹2,85,000 onwards (Three-day celebration coverage, two principal photographers, cinematic wedding film with audio vows, pre-wedding session, bespoke fine-art heirloom album, private online gallery).
   2. THE EDITORIAL: ₹1,65,000 onwards (Full-day wedding photography, two photographers, editorial portrait session, private online gallery, fine-art archival prints).
@@ -45,12 +88,13 @@ Studio Knowledge:
 - Style & Philosophy: Documenting celebrations as they actually unfold—from quiet morning rituals to the chaos of the dance floor. Natural, thoughtful, unobtrusive presence ("like invisible friends with cameras").
 - Deliverables: Curated color-finished gallery delivered within 6 to 8 weeks; 40-50 high-res highlight stills delivered within 72 hours for immediate family sharing.
 - Booking & Exclusivity: We accept a strictly limited number of weddings each year (around 18-22 celebrations) to give each couple undivided artistic focus.
-- Direct Contact: ash2k21x@gmail.com | Phone / WhatsApp: +91 8638683167.
+- Direct Contact: ${email} | Phone / WhatsApp: ${phone}.
 
 Guidance:
 When users ask about availability, dates, or booking, encourage them to share their wedding date and destination via the "Check Your Date" interactive drawer on the site or via the direct WhatsApp button.
 Keep responses concise (2-4 thoughtful sentences or brief bullet points).
 `;
+}
 
 // AI Concierge Chat Route
 app.post('/api/chat', async (req: Request, res: Response) => {
@@ -68,7 +112,7 @@ app.post('/api/chat', async (req: Request, res: Response) => {
           model: 'gemini-3.8-flash',
           contents: prompt,
           config: {
-            systemInstruction: SYSTEM_INSTRUCTION,
+            systemInstruction: buildSystemInstruction(),
             temperature: 0.7,
             topP: 0.9,
           },

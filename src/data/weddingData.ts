@@ -1,24 +1,11 @@
-import YAML from 'yaml';
-import pageYamlRaw from '../../page.yml?raw';
-import siteConfigFallback from './siteConfig.json';
+import siteConfig from './siteConfig.json';
 import { WeddingStory, Review, CollectionPackage } from '../types/wedding';
 
-let activeConfig = siteConfigFallback;
-try {
-  if (pageYamlRaw) {
-    const parsed = YAML.parse(pageYamlRaw);
-    if (parsed && typeof parsed === 'object') {
-      activeConfig = { ...siteConfigFallback, ...parsed };
-    }
-  }
-} catch (err) {
-  console.warn('Failed to parse page.yml, using fallback config:', err);
-}
-
-export const SITE_CONFIG = activeConfig;
+// Primary JSON configuration file connected to CMS (via page.yml):
+export const SITE_CONFIG = siteConfig;
 
 export const IMAGES = {
-  hero: activeConfig.hero.backgroundImage,
+  hero: siteConfig.hero.backgroundImage,
   amaraVeer: '/src/assets/images/wedding_amara_jodhpur_1790871722386.jpg',
   ishaArjun: '/src/assets/images/wedding_isha_alibaug_1790871739251.jpg',
   miraKabir: '/src/assets/images/wedding_mira_udaipur_1790871754583.jpg',
@@ -27,7 +14,7 @@ export const IMAGES = {
   fineAlbum: '/src/assets/images/wedding_fine_album_1790871804451.jpg',
 };
 
-export const WEDDING_STORIES: WeddingStory[] = activeConfig.work.stories.map((story) => ({
+export const WEDDING_STORIES: WeddingStory[] = siteConfig.work.stories.map((story) => ({
   id: story.id,
   number: story.number,
   couple: story.couple,
@@ -48,7 +35,7 @@ export const WEDDING_STORIES: WeddingStory[] = activeConfig.work.stories.map((st
   }))
 }));
 
-export const REVIEWS: Review[] = activeConfig.reviews.list.map((r) => ({
+export const REVIEWS: Review[] = siteConfig.reviews.list.map((r) => ({
   id: r.id,
   name: r.name,
   stars: 5,
@@ -56,7 +43,7 @@ export const REVIEWS: Review[] = activeConfig.reviews.list.map((r) => ({
   text: r.text
 }));
 
-export const COLLECTIONS: CollectionPackage[] = activeConfig.collections.packages.map((pkg) => ({
+export const COLLECTIONS: CollectionPackage[] = siteConfig.collections.packages.map((pkg) => ({
   id: pkg.name.toLowerCase().replace(/\s+/g, '-'),
   title: pkg.name,
   price: pkg.price,
@@ -70,21 +57,21 @@ export const COLLECTIONS: CollectionPackage[] = activeConfig.collections.package
   popular: pkg.featured
 }));
 
-export const FAQS = activeConfig.faq.questions;
+export const FAQS = siteConfig.faq.questions;
 
 export const STUDIO_INFO = {
-  name: activeConfig.owner.name,
-  tagline: activeConfig.owner.tagline,
-  philosophy: activeConfig.hero.title,
-  introText: activeConfig.hero.lead,
-  locations: activeConfig.owner.locations,
-  email: activeConfig.owner.email,
-  phone: activeConfig.owner.phone,
-  whatsappUrl: `https://wa.me/${activeConfig.owner.whatsappNumber}?text=Hi%20Lum%C3%A9%20Studio%2C%20I%20would%20love%20to%20inquire%20about%20wedding%20photography%20for%20our%20celebration.`,
-  phoneUrl: `tel:${activeConfig.owner.phone.replace(/\s+/g, '')}`,
-  instagram: activeConfig.owner.instagram,
-  pinterest: activeConfig.owner.pinterest,
-  vimeo: activeConfig.owner.vimeo,
-  googleReviewCount: activeConfig.reviews.totalCount,
-  googleRating: activeConfig.reviews.rating
+  name: siteConfig.owner.name,
+  tagline: siteConfig.owner.tagline,
+  philosophy: siteConfig.hero.title,
+  introText: siteConfig.hero.lead,
+  locations: siteConfig.owner.locations,
+  email: siteConfig.owner.email,
+  phone: siteConfig.owner.phone,
+  whatsappUrl: `https://wa.me/${siteConfig.owner.whatsappNumber}?text=Hi%20Lum%C3%A9%20Studio%2C%20I%20would%20love%20to%20inquire%20about%20wedding%20photography%20for%20our%20celebration.`,
+  phoneUrl: `tel:${siteConfig.owner.phone.replace(/\s+/g, '')}`,
+  instagram: siteConfig.owner.instagram,
+  pinterest: siteConfig.owner.pinterest,
+  vimeo: siteConfig.owner.vimeo,
+  googleReviewCount: siteConfig.reviews.totalCount,
+  googleRating: siteConfig.reviews.rating
 };

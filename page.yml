@@ -1,278 +1,323 @@
 # ==============================================================================
-# LUMÉ STUDIO - Content Management System (CMS) Configuration & Content
+# LUMÉ STUDIO - CMS Configuration connected to siteConfig.json
 # File: page.yml
-# Use this file to edit copy, images, pricing collections, stories, FAQs & contacts.
-# Changes saved here will update the live site content.
+# Target Data File: src/data/siteConfig.json
+# Format: JSON
+# Description: This configuration file connects your CMS (Decap CMS, Netlify CMS,
+#              Pages CMS, Sveltia CMS) to src/data/siteConfig.json for editing.
 # ==============================================================================
 
-# --- Studio & Business Information ---
-owner:
-  name: "LUMÉ STUDIO"
-  tagline: "Wedding Photography & Films"
-  leadPhotographer: "Creative Direction by Lumé Team"
-  email: "ash2k21x@gmail.com"
-  phone: "+91 8638683167"
-  whatsappNumber: "918638683167"
-  locations: "Mumbai · Goa · Rajasthan · Worldwide"
-  instagram: "https://instagram.com"
-  pinterest: "https://pinterest.com"
-  vimeo: "https://vimeo.com"
-  demoNote: "Demo note: the reviews, names, contact details and business information are fictional placeholders."
+backend:
+  name: git-gateway
+  branch: main
 
-# --- Hero Section ---
-hero:
-  kicker: "Wedding photography · Films · Destinations — Mumbai, India & worldwide"
-  title: "Love, in its most honest light."
-  underlineText: "honest light."
-  lead: "Contemporary wedding photography for couples who want their celebration documented with intention, emotion and a distinctly editorial eye."
-  backgroundImage: "/src/assets/images/hero_couple_black_sky_1790936497370.jpg"
-  ctaWork: "View our work"
-  ctaDate: "Check your date"
-  verticalMeta: "MUMBAI · INDIA · WORLDWIDE"
+media_folder: "src/assets/images"
+public_folder: "/src/assets/images"
 
-# --- The Work / Portfolio Stories ---
-work:
-  kicker: "The work"
-  title: "A collection of stories, beautifully observed."
-  lead: "From quiet morning rituals to the chaos of the dance floor, we document weddings as they actually unfold — naturally, thoughtfully and without unnecessary staging."
-  stories:
-    - id: "amara-veer"
-      number: "01"
-      couple: "Amara & Veer"
-      location: "Umaid Bhawan Palace, Jodhpur"
-      description: "A three-day celebration surrounded by sandstone architecture, candlelight and family traditions."
-      coverImage: "/src/assets/images/jodhpur_baraat_1790951596622.jpg"
-      coverage: "Three days"
-      collection: "The Signature"
-      tagline: "Sandstone architecture, candlelight and three generations gathered."
-      narrative: "From the haldi courtyard to the last sangeet song, we followed the family through three days at the palace, letting the architecture and the natural available light lead the frames."
-      quote:
-        text: "Every photograph feels like a frame from a beautiful film. Nothing felt forced or overly posed. They somehow captured all the little moments we completely missed on the day."
-        author: "Aanya Mehta · Amara & Veer"
-      galleryImages:
-        - url: "/src/assets/images/wedding_amara_jodhpur_1790871722386.jpg"
-          caption: "The twilight phera ceremony framed by the grand sandstone arches of Umaid Bhawan."
-        - url: "/src/assets/images/jodhpur_baraat_1790951596622.jpg"
-          caption: "The majestic baraat procession arriving across the sandstone palace courtyard."
-        - url: "/src/assets/images/wedding_detail_candid_1790871788234.jpg"
-          caption: "Nervous hands and ancestral heirloom kundan gold moments before the ceremony."
-        - url: "/src/assets/images/haldi_marigold_1790951643568.jpg"
-          caption: "Joyful laughter and flying marigold petals during the morning haldi ritual."
-        - url: "/src/assets/images/hero_couple_black_sky_1790936497370.jpg"
-          caption: "Stolen midnight moment under the starry night sky on the palace terrace."
-        - url: "/src/assets/images/hero_wedding_editorial_1790871702259.jpg"
-          caption: "Editorial portrait of the couple walking through the candlelit corridors."
-        - url: "/src/assets/images/wedding_fine_album_1790871804451.jpg"
-          caption: "The bespoke linen heirloom album preserving 400 archival prints."
-        - url: "/src/assets/images/udaipur_boat_1790951620846.jpg"
-          caption: "Reflections of royal lamps across the tranquil palace courtyard waters."
-        - url: "/src/assets/images/sangeet_dance_1790952675493.jpg"
-          caption: "Twirling under celebratory fairy lights during the midnight sangeet."
-        - url: "/src/assets/images/mandap_twilight_1790952662171.jpg"
-          caption: "Majestic candlelit mandap under grand twilight palace skies."
+# Target Data File Connection
+name: "home_page"
+label: "Home Page Content"
+file: "src/data/siteConfig.json"
+path: "src/data/siteConfig.json"
+format: "json"
+extension: "json"
 
-    - id: "isha-arjun"
-      number: "02"
-      couple: "Isha & Arjun"
-      location: "Alibaug, Maharashtra"
-      description: "A coastal celebration where monsoon skies became part of the story."
-      coverImage: "/src/assets/images/wedding_isha_alibaug_1790871739251.jpg"
-      coverage: "Full day"
-      collection: "The Editorial"
-      tagline: "Monsoon clouds, salt air, and honest joy across the Arabian Sea."
-      narrative: "The monsoon rain arrived mid-ceremony and nobody moved. We kept shooting, and the grey sea sky ended up giving the day its quiet, unforgettable cinematic mood."
-      quote:
-        text: "From the first meeting to receiving the final gallery, everything felt incredibly thoughtful. The photographs are elegant without losing the emotion of the day."
-        author: "Rohan & Priya · Isha & Arjun"
-      galleryImages:
-        - url: "/src/assets/images/wedding_isha_alibaug_1790871739251.jpg"
-          caption: "Walking barefoot along the coastal bluffs as monsoon winds caught the raw silk veil."
-        - url: "/src/assets/images/alibaug_coastal_1790951609438.jpg"
-          caption: "Candid smiles together against the dramatic coastal horizon and misty ocean air."
-        - url: "/src/assets/images/haldi_marigold_1790951643568.jpg"
-          caption: "Sunlit morning haldi celebrations filled with unfiltered family joy."
-        - url: "/src/assets/images/wedding_detail_candid_1790871788234.jpg"
-          caption: "Quiet ritual details and hand-embroidered textures before the pheras."
-        - url: "/src/assets/images/mandap_twilight_1790952662171.jpg"
-          caption: "Glowing coastal mandap with delicate florals and candlelight as dusk settles."
-        - url: "/src/assets/images/hero_wedding_editorial_1790871702259.jpg"
-          caption: "Evening celebration lights reflecting off rain-kissed coastal stone."
-        - url: "/src/assets/images/wedding_fine_album_1790871804451.jpg"
-          caption: "Curated story prints chronologically bound in archival linen."
-        - url: "/src/assets/images/goa_sunset_vows_1790951632885.jpg"
-          caption: "Barefoot laughter along the coastal shorelines as evening dusk settles."
-        - url: "/src/assets/images/sangeet_dance_1790952675493.jpg"
-          caption: "Celebratory dance floor illuminated by rain-washed lanterns."
-        - url: "/src/assets/images/hero_couple_black_sky_1790936497370.jpg"
-          caption: "Quiet twilight horizon overlooking the Arabian sea under deep indigo skies."
-
-    - id: "mira-kabir"
-      number: "03"
-      couple: "Mira & Kabir"
-      location: "The Leela Palace, Udaipur"
-      description: "An intimate evening ceremony filled with ivory florals, music and candlelight."
-      coverImage: "/src/assets/images/udaipur_boat_1790951620846.jpg"
-      coverage: "One evening"
-      collection: "The Intimate"
-      tagline: "Ivory tuberoses, floating candlelight and whispered vows over Lake Pichola."
-      narrative: "A small guest list and an unhurried evening. We stayed soft and close, photographing the ivory florals, the live sitar music and the faces in candlelight."
-      quote:
-        text: "We wanted something modern and natural, and Lumé understood that immediately. The team was practically invisible during the ceremony, but somehow they were everywhere."
-        author: "Meera Kapoor · Mira & Kabir"
-      galleryImages:
-        - url: "/src/assets/images/wedding_mira_udaipur_1790871754583.jpg"
-          caption: "The floating mandap at midnight on Lake Pichola, surrounded by water and thousands of candles."
-        - url: "/src/assets/images/udaipur_boat_1790951620846.jpg"
-          caption: "Quiet sunset moments on a handcrafted wooden boat surrounded by floating lamps."
-        - url: "/src/assets/images/wedding_detail_candid_1790871788234.jpg"
-          caption: "Tender family moments before the bride steps onto the royal wooden boat."
-        - url: "/src/assets/images/hero_wedding_editorial_1790871702259.jpg"
-          caption: "Illuminated palace archways and delicate ivory floral installations."
-        - url: "/src/assets/images/mandap_twilight_1790952662171.jpg"
-          caption: "Lakeside floral mandap aglow with floating candles under the stars."
-        - url: "/src/assets/images/haldi_marigold_1790951643568.jpg"
-          caption: "Spontaneous laughter shared with childhood friends in the lakeside courtyard."
-        - url: "/src/assets/images/wedding_fine_album_1790871804451.jpg"
-          caption: "Handmade archival cotton rag album bound with gold foil embossing."
-        - url: "/src/assets/images/jodhpur_baraat_1790951596622.jpg"
-          caption: "Palace terrace lit by traditional brass lanterns as night descends over Lake Pichola."
-        - url: "/src/assets/images/sangeet_dance_1790952675493.jpg"
-          caption: "Intimate sitar music and evening courtyard celebration."
-        - url: "/src/assets/images/hero_couple_black_sky_1790936497370.jpg"
-          caption: "Candlelit silhouettes over the shimmering palace waters under the night sky."
-
-    - id: "naina-rishabh"
-      number: "04"
-      couple: "Naina & Rishabh"
-      location: "Goa, India"
-      description: "46 guests, a private beach, wild florals and one unforgettable weekend."
-      coverImage: "/src/assets/images/goa_sunset_vows_1790951632885.jpg"
-      coverage: "One weekend"
-      collection: "The Intimate"
-      tagline: "46 guests, a private beach, wild florals and one unforgettable weekend."
-      narrative: "Bare feet, warm sea air and wild florals. With only 46 guests, every single photograph is of someone who truly mattered to the couple."
-      quote:
-        text: "Our wedding film made us emotional all over again. The audio from our vows and our parents' speeches was such a beautiful touch."
-        author: "Tara & Kabir · Naina & Rishabh"
-      galleryImages:
-        - url: "/src/assets/images/wedding_naina_goa_1790871769912.jpg"
-          caption: "Golden hour sunset celebration as 46 close friends and family cheered under ocean skies."
-        - url: "/src/assets/images/goa_sunset_vows_1790951632885.jpg"
-          caption: "Barefoot vows exchanged in the warm sand beside wild pampas and driftwood florals."
-        - url: "/src/assets/images/haldi_marigold_1790951643568.jpg"
-          caption: "Playful seaside haldi ceremony with yellow petals scattered by the sea breeze."
-        - url: "/src/assets/images/wedding_detail_candid_1790871788234.jpg"
-          caption: "Seashells, delicate gold jewelry, and handwritten vows written in sea air."
-        - url: "/src/assets/images/mandap_twilight_1790952662171.jpg"
-          caption: "Beachfront driftwood mandap glowing under the warm sunset horizon."
-        - url: "/src/assets/images/hero_wedding_editorial_1790871702259.jpg"
-          caption: "Intimate evening dinner by fairy-lit palm trees and ocean sounds."
-        - url: "/src/assets/images/wedding_fine_album_1790871804451.jpg"
-          caption: "Fine-art linen album bound with textured Japanese archival paper."
-        - url: "/src/assets/images/alibaug_coastal_1790951609438.jpg"
-          caption: "Gentle sea breeze and golden sunlight wrapping around the couple on the beach bluff."
-        - url: "/src/assets/images/sangeet_dance_1790952675493.jpg"
-          caption: "Barefoot dancing in the sand under strings of festive seaside lanterns."
-        - url: "/src/assets/images/hero_couple_black_sky_1790936497370.jpg"
-          caption: "Starry midnight bonfire dance floor by the ocean with 46 closest people."
-
-# --- Google Reviews ---
-reviews:
-  kicker: "Google reviews"
-  rating: "5.0"
-  stars: "★★★★★"
-  totalCount: 87
-  subtitle: "Based on 87 Google reviews"
-  list:
-    - id: "r1"
-      name: "Aanya Mehta"
-      timeAgo: "2 months ago"
-      text: "Every photograph feels like a frame from a beautiful film. Nothing felt forced or overly posed. They somehow captured all the little moments we completely missed on the day."
-    - id: "r2"
-      name: "Rohan & Priya"
-      timeAgo: "4 months ago"
-      text: "From the first meeting to receiving the final gallery, everything felt incredibly thoughtful. The photographs are elegant without losing the emotion of the day."
-    - id: "r3"
-      name: "Karan & Ishita"
-      timeAgo: "6 months ago"
-      text: "They didn't just take photos, they told our story. Every image feels so alive, candid and full of feeling. We'll cherish these forever."
-    - id: "r4"
-      name: "Neha & Arjun"
-      timeAgo: "5 months ago"
-      text: "Professional, calm and a joy to work with. They made us feel so comfortable and the results exceeded everything we imagined. Truly timeless work."
-
-# --- Why Lumé Studio Philosophy ---
-why:
-  kicker: "Why Lumé"
-  title: "Not just the big moments."
-  moments:
-    - "The nervous hands before the ceremony."
-    - "Your mother's expression when she sees you dressed."
-    - "A friend laughing in the corner."
-    - "The empty dance floor at 2 AM."
-    - "The last hug before everyone leaves."
-  conclusion: "Those are the photographs we look for."
-  steps:
-    - title: "Before"
-      description: "We get to know your story, your people and the atmosphere you're imagining."
-    - title: "During"
-      description: "We photograph naturally, stepping in only when direction genuinely adds something."
-    - title: "After"
-      description: "Every photograph is carefully selected, colour-finished and curated into a visual story."
-
-# --- Curated Collections / Packages ---
 collections:
-  kicker: "Collections"
-  title: "Three ways to be photographed."
-  note: "Destination celebrations are available on request."
-  packages:
-    - name: "The Signature"
-      price: "₹2,85,000 onwards"
-      featured: true
-      coverImage: "/src/assets/images/wedding_fine_album_1790871804451.jpg"
-      items:
-        - "Three-day wedding coverage"
-        - "Two photographers"
-        - "Wedding film"
-        - "Pre-wedding session"
-        - "Fine-art album"
-        - "Private online gallery"
-    - name: "The Editorial"
-      price: "₹1,65,000 onwards"
-      featured: false
-      coverImage: "/src/assets/images/alibaug_coastal_1790951609438.jpg"
-      items:
-        - "Full-day photography"
-        - "Two photographers"
-        - "Portrait session"
-        - "Private online gallery"
-        - "Fine-art prints"
-    - name: "The Intimate"
-      price: "₹95,000 onwards"
-      featured: false
-      coverImage: "/src/assets/images/mandap_twilight_1790952662171.jpg"
-      items:
-        - "Up to 8 hours"
-        - "Lead photographer + assistant"
-        - "Online gallery"
-        - "High-resolution photographs"
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/data/siteConfig.json"
+        name: "home"
+        label: "Home Page"
+        format: "json"
+        extension: "json"
+        fields:
+          # --- Studio Details ---
+          - label: "Studio Info"
+            name: "owner"
+            widget: "object"
+            fields:
+              - { label: "Studio Name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Lead Photographer / Creative Direction", name: "leadPhotographer", widget: "string" }
+              - { label: "Contact Email", name: "email", widget: "string" }
+              - { label: "Phone Number", name: "phone", widget: "string" }
+              - { label: "WhatsApp Number (Digits only)", name: "whatsappNumber", widget: "string" }
+              - { label: "Studio Locations", name: "locations", widget: "string" }
+              - { label: "Instagram URL", name: "instagram", widget: "string" }
+              - { label: "Pinterest URL", name: "pinterest", widget: "string" }
+              - { label: "Vimeo URL", name: "vimeo", widget: "string" }
+              - { label: "Demo Disclaimer Note", name: "demoNote", widget: "string" }
 
-# --- Frequently Asked Questions (FAQ) ---
-faq:
-  kicker: "Good to know"
-  title: "Questions couples ask us."
-  questions:
-    - q: "How far ahead should we book?"
-      a: "Most couples reach out 8 to 12 months ahead. We accept a limited number of celebrations each year, so peak wedding dates go first."
-    - q: "Do you travel for weddings?"
-      a: "Yes. We shoot across India and worldwide. Destination quotes include travel and stay and are shared on request."
-    - q: "When do we receive our photographs?"
-      a: "Every photograph is selected and colour-finished by hand. Share your date and we'll confirm delivery timelines for your collection."
-    - q: "How do we confirm a date?"
-      a: "Send us your date, venue and a little about your plans. We reply personally, then lock the date with a booking agreement."
+          # --- Hero Section ---
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Top Kicker", name: "kicker", widget: "string" }
+              - { label: "Main Headline", name: "title", widget: "string" }
+              - { label: "Underline Highlight Phrase", name: "underlineText", widget: "string" }
+              - { label: "Lead Intro Paragraph", name: "lead", widget: "text" }
+              - { label: "Hero Background Image", name: "backgroundImage", widget: "image" }
+              - { label: "View Work CTA Label", name: "ctaWork", widget: "string" }
+              - { label: "Check Date CTA Label", name: "ctaDate", widget: "string" }
+              - { label: "Vertical Side Text", name: "verticalMeta", widget: "string" }
 
-# --- Contact / Date Checker Section ---
-contact:
-  kicker: "Check your date"
-  title: "Your date is the only thing we need."
-  lead: "We accept a limited number of celebrations each year. Tell us your date, destination and a little about what you're planning."
+          # --- Portfolio Stories ---
+          - label: "The Work / Portfolio Stories"
+            name: "work"
+            widget: "object"
+            fields:
+              - { label: "Section Kicker", name: "kicker", widget: "string" }
+              - { label: "Section Title", name: "title", widget: "string" }
+              - { label: "Section Lead Copy", name: "lead", widget: "text" }
+              - label: "Wedding Stories List"
+                name: "stories"
+                widget: "list"
+                fields:
+                  - { label: "Story Slug / ID", name: "id", widget: "string" }
+                  - { label: "Story Number (e.g. 01)", name: "number", widget: "string" }
+                  - { label: "Couple Names", name: "couple", widget: "string" }
+                  - { label: "Venue & Location", name: "location", widget: "string" }
+                  - { label: "Card Description", name: "description", widget: "text" }
+                  - { label: "Card Cover Image", name: "coverImage", widget: "image" }
+                  - { label: "Coverage Duration", name: "coverage", widget: "string" }
+                  - { label: "Collection Package", name: "collection", widget: "string" }
+                  - { label: "Story Tagline", name: "tagline", widget: "string" }
+                  - { label: "Detailed Narrative", name: "narrative", widget: "text" }
+                  - label: "Couple Quote"
+                    name: "quote"
+                    widget: "object"
+                    fields:
+                      - { label: "Quote Text", name: "text", widget: "text" }
+                      - { label: "Author Attribution", name: "author", widget: "string" }
+                  - label: "Gallery Photographs"
+                    name: "galleryImages"
+                    widget: "list"
+                    fields:
+                      - { label: "Photo URL", name: "url", widget: "image" }
+                      - { label: "Caption", name: "caption", widget: "string" }
+
+          # --- Google Reviews ---
+          - label: "Google Reviews & Testimonials"
+            name: "reviews"
+            widget: "object"
+            fields:
+              - { label: "Section Kicker", name: "kicker", widget: "string" }
+              - { label: "Score Rating", name: "rating", widget: "string" }
+              - { label: "Star Graphic", name: "stars", widget: "string" }
+              - { label: "Total Reviews Count", name: "totalCount", widget: "number", value_type: "int" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - label: "Reviews List"
+                name: "list"
+                widget: "list"
+                fields:
+                  - { label: "Review ID", name: "id", widget: "string" }
+                  - { label: "Client Name", name: "name", widget: "string" }
+                  - { label: "Date / Time Ago", name: "timeAgo", widget: "string" }
+                  - { label: "Review Text", name: "text", widget: "text" }
+
+          # --- Why Lumé Philosophy ---
+          - label: "Why Lumé Philosophy"
+            name: "why"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Observed Moments List"
+                name: "moments"
+                widget: "list"
+                field: { label: "Moment Description", name: "moment", widget: "string" }
+              - { label: "Conclusion Line", name: "conclusion", widget: "string" }
+              - label: "Process Steps"
+                name: "steps"
+                widget: "list"
+                fields:
+                  - { label: "Step Title (Before/During/After)", name: "title", widget: "string" }
+                  - { label: "Step Description", name: "description", widget: "text" }
+
+          # --- Collections & Pricing ---
+          - label: "Collections & Investment"
+            name: "collections"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Travel Note", name: "note", widget: "string" }
+              - label: "Packages"
+                name: "packages"
+                widget: "list"
+                fields:
+                  - { label: "Package Name", name: "name", widget: "string" }
+                  - { label: "Price Text", name: "price", widget: "string" }
+                  - { label: "Featured Package?", name: "featured", widget: "boolean" }
+                  - { label: "Cover Photo", name: "coverImage", widget: "image" }
+                  - label: "Included Features List"
+                    name: "items"
+                    widget: "list"
+                    field: { label: "Deliverable Feature", name: "item", widget: "string" }
+
+          # --- Frequently Asked Questions ---
+          - label: "FAQ Section"
+            name: "faq"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Questions List"
+                name: "questions"
+                widget: "list"
+                fields:
+                  - { label: "Question", name: "q", widget: "string" }
+                  - { label: "Answer", name: "a", widget: "text" }
+
+          # --- Contact & Inquiry ---
+          - label: "Contact / Date Checker Section"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Lead Instruction", name: "lead", widget: "text" }
+
+# Flat schema fields mapping directly to src/data/siteConfig.json:
+fields:
+  - label: "Studio Info"
+    name: "owner"
+    widget: "object"
+    fields:
+      - { label: "Studio Name", name: "name", widget: "string" }
+      - { label: "Tagline", name: "tagline", widget: "string" }
+      - { label: "Lead Photographer", name: "leadPhotographer", widget: "string" }
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "Phone", name: "phone", widget: "string" }
+      - { label: "WhatsApp Number", name: "whatsappNumber", widget: "string" }
+      - { label: "Locations", name: "locations", widget: "string" }
+      - { label: "Instagram", name: "instagram", widget: "string" }
+      - { label: "Pinterest", name: "pinterest", widget: "string" }
+      - { label: "Vimeo", name: "vimeo", widget: "string" }
+      - { label: "Demo Note", name: "demoNote", widget: "string" }
+
+  - label: "Hero Section"
+    name: "hero"
+    widget: "object"
+    fields:
+      - { label: "Kicker", name: "kicker", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Underline Text", name: "underlineText", widget: "string" }
+      - { label: "Lead Text", name: "lead", widget: "text" }
+      - { label: "Background Image", name: "backgroundImage", widget: "image" }
+      - { label: "CTA Work Button", name: "ctaWork", widget: "string" }
+      - { label: "CTA Date Button", name: "ctaDate", widget: "string" }
+      - { label: "Vertical Meta", name: "verticalMeta", widget: "string" }
+
+  - label: "The Work"
+    name: "work"
+    widget: "object"
+    fields:
+      - { label: "Kicker", name: "kicker", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Lead Text", name: "lead", widget: "text" }
+      - label: "Stories"
+        name: "stories"
+        widget: "list"
+        fields:
+          - { label: "ID", name: "id", widget: "string" }
+          - { label: "Number", name: "number", widget: "string" }
+          - { label: "Couple", name: "couple", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Cover Image", name: "coverImage", widget: "image" }
+          - { label: "Coverage", name: "coverage", widget: "string" }
+          - { label: "Collection Package", name: "collection", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Narrative", name: "narrative", widget: "text" }
+          - label: "Quote"
+            name: "quote"
+            widget: "object"
+            fields:
+              - { label: "Quote Text", name: "text", widget: "text" }
+              - { label: "Author", name: "author", widget: "string" }
+          - label: "Gallery Images"
+            name: "galleryImages"
+            widget: "list"
+            fields:
+              - { label: "Image URL", name: "url", widget: "image" }
+              - { label: "Caption", name: "caption", widget: "string" }
+
+  - label: "Google Reviews"
+    name: "reviews"
+    widget: "object"
+    fields:
+      - { label: "Kicker", name: "kicker", widget: "string" }
+      - { label: "Rating", name: "rating", widget: "string" }
+      - { label: "Stars", name: "stars", widget: "string" }
+      - { label: "Total Reviews Count", name: "totalCount", widget: "number", value_type: "int" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - label: "Review List"
+        name: "list"
+        widget: "list"
+        fields:
+          - { label: "ID", name: "id", widget: "string" }
+          - { label: "Client Name", name: "name", widget: "string" }
+          - { label: "Time Ago", name: "timeAgo", widget: "string" }
+          - { label: "Review Text", name: "text", widget: "text" }
+
+  - label: "Why Lumé"
+    name: "why"
+    widget: "object"
+    fields:
+      - { label: "Kicker", name: "kicker", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Moments"
+        name: "moments"
+        widget: "list"
+        field: { label: "Moment", name: "moment", widget: "string" }
+      - { label: "Conclusion", name: "conclusion", widget: "string" }
+      - label: "Process Steps"
+        name: "steps"
+        widget: "list"
+        fields:
+          - { label: "Step Title", name: "title", widget: "string" }
+          - { label: "Step Description", name: "description", widget: "text" }
+
+  - label: "Collections"
+    name: "collections"
+    widget: "object"
+    fields:
+      - { label: "Kicker", name: "kicker", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Note", name: "note", widget: "string" }
+      - label: "Packages"
+        name: "packages"
+        widget: "list"
+        fields:
+          - { label: "Package Name", name: "name", widget: "string" }
+          - { label: "Price", name: "price", widget: "string" }
+          - { label: "Featured", name: "featured", widget: "boolean" }
+          - { label: "Cover Image", name: "coverImage", widget: "image" }
+          - label: "Included Items"
+            name: "items"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+
+  - label: "FAQ"
+    name: "faq"
+    widget: "object"
+    fields:
+      - { label: "Kicker", name: "kicker", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Questions"
+        name: "questions"
+        widget: "list"
+        fields:
+          - { label: "Question", name: "q", widget: "string" }
+          - { label: "Answer", name: "a", widget: "text" }
+
+  - label: "Contact Section"
+    name: "contact"
+    widget: "object"
+    fields:
+      - { label: "Kicker", name: "kicker", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Lead Text", name: "lead", widget: "text" }

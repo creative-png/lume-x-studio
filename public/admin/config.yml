@@ -1,16 +1,7 @@
-# ==============================================================================
-# LUMÉ STUDIO - CMS Configuration connected to siteConfig.json
-# File: src/data/page.yml
-# Target Data File: src/data/siteConfig.json
-# Format: JSON
-# ==============================================================================
+backend:
+  name: git-gateway
+  branch: main
 
-name: "home_page"
-label: "Home Page Content"
-file: "src/data/siteConfig.json"
-path: "src/data/siteConfig.json"
-format: "json"
-extension: "json"
 media_folder: "src/assets/images"
 public_folder: "/src/assets/images"
 
@@ -38,7 +29,6 @@ collections:
               - { label: "Instagram", name: "instagram", widget: "string" }
               - { label: "Pinterest", name: "pinterest", widget: "string" }
               - { label: "Vimeo", name: "vimeo", widget: "string" }
-              - { label: "Demo Note", name: "demoNote", widget: "string" }
           - label: "Hero Section"
             name: "hero"
             widget: "object"
@@ -50,7 +40,6 @@ collections:
               - { label: "Background Image", name: "backgroundImage", widget: "image" }
               - { label: "CTA Work Button", name: "ctaWork", widget: "string" }
               - { label: "CTA Date Button", name: "ctaDate", widget: "string" }
-              - { label: "Vertical Meta", name: "verticalMeta", widget: "string" }
           - label: "The Work"
             name: "work"
             widget: "object"
@@ -72,59 +61,23 @@ collections:
                   - { label: "Collection Package", name: "collection", widget: "string" }
                   - { label: "Tagline", name: "tagline", widget: "string" }
                   - { label: "Narrative", name: "narrative", widget: "text" }
-                  - label: "Quote"
-                    name: "quote"
-                    widget: "object"
-                    fields:
-                      - { label: "Quote Text", name: "text", widget: "text" }
-                      - { label: "Author", name: "author", widget: "string" }
-                  - label: "Gallery Images"
-                    name: "galleryImages"
-                    widget: "list"
-                    fields:
-                      - { label: "Image URL", name: "url", widget: "image" }
-                      - { label: "Caption", name: "caption", widget: "string" }
           - label: "Google Reviews"
             name: "reviews"
             widget: "object"
             fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
               - { label: "Rating", name: "rating", widget: "string" }
-              - { label: "Stars", name: "stars", widget: "string" }
               - { label: "Total Reviews Count", name: "totalCount", widget: "number", value_type: "int" }
-              - { label: "Subtitle", name: "subtitle", widget: "string" }
               - label: "Review List"
                 name: "list"
                 widget: "list"
                 fields:
-                  - { label: "ID", name: "id", widget: "string" }
                   - { label: "Client Name", name: "name", widget: "string" }
                   - { label: "Time Ago", name: "timeAgo", widget: "string" }
                   - { label: "Review Text", name: "text", widget: "text" }
-          - label: "Why Lumé"
-            name: "why"
-            widget: "object"
-            fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - label: "Moments"
-                name: "moments"
-                widget: "list"
-                field: { label: "Moment", name: "moment", widget: "string" }
-              - { label: "Conclusion", name: "conclusion", widget: "string" }
-              - label: "Process Steps"
-                name: "steps"
-                widget: "list"
-                fields:
-                  - { label: "Step Title", name: "title", widget: "string" }
-                  - { label: "Step Description", name: "description", widget: "text" }
           - label: "Collections"
             name: "collections"
             widget: "object"
             fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Note", name: "note", widget: "string" }
               - label: "Packages"
                 name: "packages"
                 widget: "list"
@@ -133,7 +86,7 @@ collections:
                   - { label: "Price", name: "price", widget: "string" }
                   - { label: "Featured", name: "featured", widget: "boolean" }
                   - { label: "Cover Image", name: "coverImage", widget: "image" }
-                  - label: "Included Items"
+                  - label: "Items"
                     name: "items"
                     widget: "list"
                     field: { label: "Item", name: "item", widget: "string" }
@@ -141,8 +94,6 @@ collections:
             name: "faq"
             widget: "object"
             fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
               - label: "Questions"
                 name: "questions"
                 widget: "list"
