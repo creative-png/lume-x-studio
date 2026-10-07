@@ -5,7 +5,7 @@ content:
   - name: site
     label: Website content
     type: file
-    path: src/siteConfig.json   # CHANGE to your real path
+    path: src/data/siteConfig.json   # CHANGE to your real path
     format: json
     fields:
       - name: owner
