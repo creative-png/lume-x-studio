@@ -74,7 +74,7 @@ app.post('/api/chat', async (req: Request, res: Response) => {
           },
         });
 
-        const reply = response.text || "Thank you for reaching out to Lumé Studio. Our creative director would be delighted to review your wedding details. Please share your dates or reach us directly on WhatsApp at +91 98765 43210.";
+        const reply = response.text || "Thank you for reaching out to Lumé Studio. Our creative director would be delighted to review your wedding details. Please share your dates or reach us directly on WhatsApp at +91 8638683167.";
         return res.json({ reply });
       } catch (geminiError: any) {
         console.error('Gemini API Error:', geminiError?.message || geminiError);
@@ -89,7 +89,7 @@ app.post('/api/chat', async (req: Request, res: Response) => {
     if (lower.includes('price') || lower.includes('cost') || lower.includes('package') || lower.includes('collection') || lower.includes('rate')) {
       reply = "Our curated collections begin at ₹95,000 for The Intimate (up to 8 hours), ₹1,65,000 for The Editorial (full day with two photographers), and ₹2,85,000 for The Signature (three-day full celebration with wedding film, pre-wedding session, and fine-art album). Custom destination collections are available upon request.";
     } else if (lower.includes('date') || lower.includes('available') || lower.includes('book') || lower.includes('availability')) {
-      reply = "We document approximately 20 celebrations annually. To check availability for your specific dates, please use the 'Check Your Date' button above or connect with our studio producer directly on WhatsApp at +91 98765 43210.";
+      reply = "We document approximately 20 celebrations annually. To check availability for your specific dates, please use the 'Check Your Date' button above or connect with our studio producer directly on WhatsApp at +91 8638683167.";
     } else if (lower.includes('travel') || lower.includes('destination') || lower.includes('udaipur') || lower.includes('goa') || lower.includes('jodhpur') || lower.includes('como')) {
       reply = "Yes, we travel frequently throughout India—regularly documenting celebrations in Rajasthan (Umaid Bhawan, Udaipur palaces), Goa, Alibaug, and Delhi—as well as international destinations including Italy, Bali, and the UAE.";
     } else if (lower.includes('style') || lower.includes('posed') || lower.includes('film') || lower.includes('candid')) {
@@ -101,7 +101,7 @@ app.post('/api/chat', async (req: Request, res: Response) => {
     console.error('Server error in /api/chat:', error);
     return res.status(500).json({
       error: 'Unable to process inquiry at this moment.',
-      reply: 'We are delighted you are considering Lumé Studio. Please connect with us directly via WhatsApp at +91 98765 43210 or email hello@lumestudio.in.'
+      reply: 'We are delighted you are considering Lumé Studio. Please connect with us directly via WhatsApp at +91 8638683167 or email ash2k21x@gmail.com.'
     });
   }
 });
