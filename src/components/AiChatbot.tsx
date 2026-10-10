@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { SITE_CONFIG } from '../data/weddingData';
 
 interface Message {
   role: 'bot' | 'me';
@@ -11,10 +12,22 @@ interface AiChatbotProps {
 }
 
 export const AiChatbot: React.FC<AiChatbotProps> = ({ isOpen, onClose }) => {
+  const { owner, collections } = SITE_CONFIG;
+  const studioName = owner?.name || 'LUMÉ STUDIO';
+  const shortName = studioName.split(' ')[0] || 'Lumé';
+  const phone = owner?.phone || '+91 8638683167';
+  const email = owner?.email || 'ash2k21x@gmail.com';
+  const whatsappNumber = owner?.whatsappNumber || '918638683167';
+  const locations = owner?.locations || 'Mumbai, Goa, Rajasthan & worldwide';
+
+  const packagesDesc = (collections?.packages || [])
+    .map((p) => `${p.name} (${p.price})`)
+    .join(', ');
+
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'bot',
-      text: "Hello, I'm the Lumé concierge. Ask me about collections, dates or travel."
+      text: `Hello, I'm the ${shortName} concierge. Ask me about collections, dates or travel.`
     }
   ]);
   const [input, setInput] = useState('');
@@ -28,14 +41,14 @@ export const AiChatbot: React.FC<AiChatbotProps> = ({ isOpen, onClose }) => {
   const chips = ['Pricing', 'Check availability', 'Destination weddings', 'Contact the team'];
 
   const quickKnowledge: [RegExp, string][] = [
-    [/price|cost|package|collection|rate|budget|₹/i, "We have three collections: The Signature from ₹2,85,000 (three days, two photographers, film, pre-wedding, album), The Editorial from ₹1,65,000 (full day, portrait session, prints) and The Intimate from ₹95,000 (up to 8 hours). Want a tailored quote?"],
-    [/date|available|book|slot/i, "We take a limited number of weddings each year. Use 'Check your date' below, or message us on WhatsApp with your date and venue and we'll confirm availability."],
-    [/travel|destination|abroad|worldwide|goa|udaipur|jodhpur/i, "Yes, we shoot across India and worldwide. Destination coverage is available on request and quoted with travel included."],
-    [/film|video|cinema/i, "Wedding films are part of The Signature collection, with real audio from vows and speeches. Ask us if you'd like a film added to another collection."],
-    [/album|print/i, "Fine-art albums come with The Signature, and fine-art prints with The Editorial."],
-    [/gallery|deliver|receive|how long|time/i, "Every collection includes a private online gallery. Each photograph is hand-selected and colour-finished; share your date and we'll confirm timelines."],
-    [/photographer|team|style|candid/i, "We shoot naturally and editorially, stepping in only when direction adds something. Most collections include two photographers."],
-    [/contact|call|phone|email|whatsapp|talk/i, "Reach us at +91 8638683167 or ash2k21x@gmail.com, or tap the WhatsApp button."]
+    [/price|cost|package|collection|rate|budget|₹/i, `Our curated collections include: ${packagesDesc || 'custom tailored collections'}. Reach our team for a bespoke quote.`],
+    [/date|available|book|slot/i, `We accept a limited number of celebrations each year. Use the 'Check your date' section below, or message us on WhatsApp with your date and venue to confirm availability.`],
+    [/travel|destination|abroad|worldwide|goa|udaipur|jodhpur/i, `Yes, we document weddings across ${locations}. Destination coverage is available on request with travel included.`],
+    [/film|video|cinema/i, "Cinematic wedding films with authentic vows audio are featured in our premier collections or available as an addition."],
+    [/album|print/i, "Fine-art handcrafted heirloom albums and archival prints are included across our signature collections."],
+    [/gallery|deliver|receive|how long|time/i, "Every celebration includes a private online gallery. Photographs are hand-finished individually, with preview highlights delivered within 72 hours."],
+    [/photographer|team|style|candid/i, "Our style is documentary and editorial: capturing authentic emotion without stiff, artificial posing."],
+    [/contact|call|phone|email|whatsapp|talk/i, `Reach us directly at ${phone} or ${email}, or message us on WhatsApp at +${whatsappNumber}.`]
   ];
 
   const handleSend = async (userText: string) => {
@@ -67,7 +80,7 @@ export const AiChatbot: React.FC<AiChatbotProps> = ({ isOpen, onClose }) => {
     const hit = quickKnowledge.find(([regex]) => regex.test(text));
     const replyText = hit
       ? hit[1]
-      : "I'd love to help with that. Message us on WhatsApp at +91 8638683167 or check your date below and the team will reply personally.";
+      : `I'd love to help with that. Message us on WhatsApp at ${phone} or check your date below and the team will reply personally.`;
 
     setTimeout(() => {
       setMessages((prev) => [...prev, { role: 'bot', text: replyText }]);
@@ -87,7 +100,7 @@ export const AiChatbot: React.FC<AiChatbotProps> = ({ isOpen, onClose }) => {
       {/* Header */}
       <header className="px-4.5 py-3.5 border-b border-[#3a2f40] flex justify-between items-center bg-[#17111a]">
         <span className="font-serif text-[22px] font-light text-[#f3eee8]">
-          Lumé concierge
+          {shortName} concierge
         </span>
         <button
           onClick={onClose}

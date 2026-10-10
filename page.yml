@@ -3,138 +3,138 @@ media:
   output: /src/assets/images
 
 content:
-  - name: site
-    label: Website content
+  - name: page
+    label: Website Content
     type: file
-    path: src/data/siteconfig.json
+    path: src/data/siteConfig.json
     format: json
     fields:
       - name: owner
-        label: Business details
+        label: Studio & Business Info
         type: object
         fields:
-          - { name: name, label: Business name, type: string }
-          - { name: tagline, label: Tagline, type: string }
-          - { name: leadPhotographer, label: Credit line, type: string }
-          - { name: email, label: Email, type: string }
-          - { name: phone, label: Phone number, type: string }
-          - { name: whatsappNumber, label: WhatsApp number (91XXXXXXXXXX, no + or spaces), type: string }
-          - { name: locations, label: Locations, type: string }
-          - { name: instagram, label: Instagram link, type: string }
-          - { name: pinterest, label: Pinterest link, type: string }
-          - { name: vimeo, label: Vimeo link, type: string }
-          - { name: demoNote, label: Demo note (footer), type: text }
+          - { name: name, label: Studio Name, type: string }
+          - { name: tagline, label: Studio Tagline, type: string }
+          - { name: leadPhotographer, label: Lead Photographer / Creative Direction, type: string }
+          - { name: email, label: Contact Email, type: string }
+          - { name: phone, label: Phone Number, type: string }
+          - { name: whatsappNumber, label: WhatsApp Number, type: string }
+          - { name: locations, label: Studio Locations & Travel Base, type: string }
+          - { name: instagram, label: Instagram Profile Link, type: string }
+          - { name: pinterest, label: Pinterest Profile Link, type: string }
+          - { name: vimeo, label: Vimeo Profile Link, type: string }
+          - { name: demoNote, label: Footer Disclaimer / Demo Note, type: text }
 
       - name: hero
-        label: Hero (top section)
+        label: Hero Banner
         type: object
         fields:
-          - { name: kicker, label: Small top line, type: string }
-          - { name: title, label: Main heading, type: string }
-          - { name: underlineText, label: Underlined part of heading (must match words in heading), type: string }
-          - { name: lead, label: Intro paragraph, type: text }
-          - { name: backgroundImage, label: Background image, type: image }
-          - { name: ctaWork, label: Button 1 text, type: string }
-          - { name: ctaDate, label: Button 2 text, type: string }
-          - { name: verticalMeta, label: Vertical side text, type: string }
+          - { name: kicker, label: Hero Kicker, type: string }
+          - { name: title, label: Main Headline, type: string }
+          - { name: underlineText, label: Underline Highlight Phrase, type: string }
+          - { name: lead, label: Introduction Paragraph, type: text }
+          - { name: backgroundImage, label: Hero Background Image, type: image }
+          - { name: ctaWork, label: View Work Button Label, type: string }
+          - { name: ctaDate, label: Check Date Button Label, type: string }
+          - { name: verticalMeta, label: Vertical Side Text, type: string }
 
       - name: work
-        label: Work section
+        label: Portfolio Stories
         type: object
         fields:
-          - { name: kicker, label: Small top line, type: string }
-          - { name: title, label: Heading, type: string }
-          - { name: lead, label: Intro paragraph, type: text }
+          - { name: kicker, label: Section Kicker, type: string }
+          - { name: title, label: Section Headline, type: string }
+          - { name: lead, label: Section Introduction, type: text }
           - name: stories
-            label: Wedding stories (cards)
+            label: Wedding Stories
             type: object
             list: true
             fields:
-              - { name: id, label: ID (lowercase, no spaces, e.g. amara-veer), type: string }
-              - { name: number, label: Number (01, 02...), type: string }
-              - { name: couple, label: Couple names, type: string }
-              - { name: location, label: Location, type: string }
-              - { name: description, label: Short description, type: text }
-              - { name: coverImage, label: Cover image, type: image }
-              - { name: coverage, label: Coverage, type: string }
-              - { name: collection, label: Collection name, type: string }
-              - { name: tagline, label: Tagline, type: text }
-              - { name: narrative, label: Story text, type: text }
+              - { name: id, label: Story ID / URL Slug, type: string }
+              - { name: number, label: Story Number, type: string }
+              - { name: couple, label: Couple Names, type: string }
+              - { name: location, label: Venue & Location, type: string }
+              - { name: description, label: Card Summary Description, type: text }
+              - { name: coverImage, label: Story Cover Image, type: image }
+              - { name: coverage, label: Coverage Duration, type: string }
+              - { name: collection, label: Associated Package, type: string }
+              - { name: tagline, label: Inner Page Tagline, type: string }
+              - { name: narrative, label: Full Editorial Narrative, type: text }
               - name: quote
-                label: Client quote
+                label: Couple Testimonial Quote
                 type: object
                 fields:
-                  - { name: text, label: Quote, type: text }
-                  - { name: author, label: Author, type: string }
+                  - { name: text, label: Quote Text, type: text }
+                  - { name: author, label: Quote Author Attribution, type: string }
               - name: galleryImages
-                label: Gallery photos
+                label: Story Gallery Photographs
                 type: object
                 list: true
                 fields:
-                  - { name: url, label: Photo, type: image }
-                  - { name: caption, label: Caption, type: text }
+                  - { name: url, label: Photograph Image, type: image }
+                  - { name: caption, label: Photograph Caption, type: string }
 
       - name: reviews
-        label: Reviews section
+        label: Google Reviews
         type: object
         fields:
-          - { name: kicker, label: Small top line, type: string }
-          - { name: rating, label: Rating (e.g. 5.0), type: string }
-          - { name: stars, label: Stars text, type: string }
-          - { name: totalCount, label: Total review count, type: number }
-          - { name: subtitle, label: Subtitle, type: string }
+          - { name: kicker, label: Section Kicker, type: string }
+          - { name: rating, label: Star Rating Score, type: string }
+          - { name: stars, label: Star Symbols, type: string }
+          - { name: totalCount, label: Total Review Count, type: number }
+          - { name: subtitle, label: Rating Subtitle, type: string }
           - name: list
-            label: Reviews
+            label: Client Reviews
             type: object
             list: true
             fields:
-              - { name: id, label: ID (r1, r2...), type: string }
-              - { name: name, label: Reviewer name, type: string }
-              - { name: timeAgo, label: Time ago, type: string }
-              - { name: text, label: Review text, type: text }
+              - { name: id, label: Review ID, type: string }
+              - { name: name, label: Client Name, type: string }
+              - { name: timeAgo, label: Review Time Ago, type: string }
+              - { name: text, label: Review Content, type: text }
 
       - name: why
-        label: Why us section
+        label: Why Lumé Philosophy
         type: object
         fields:
-          - { name: kicker, label: Small top line, type: string }
-          - { name: title, label: Heading, type: string }
-          - { name: moments, label: Moments list, type: string, list: true }
-          - { name: conclusion, label: Conclusion line, type: string }
+          - { name: kicker, label: Section Kicker, type: string }
+          - { name: title, label: Section Headline, type: string }
+          - { name: moments, label: Observed Moments List, type: string, list: true }
+          - { name: conclusion, label: Conclusion Statement, type: string }
           - name: steps
-            label: Steps (Before / During / After)
+            label: Process Steps
             type: object
             list: true
             fields:
-              - { name: title, label: Step title, type: string }
-              - { name: description, label: Description, type: text }
+              - { name: title, label: Step Title, type: string }
+              - { name: description, label: Step Description, type: text }
 
       - name: collections
-        label: Packages section
+        label: Collections & Pricing
         type: object
         fields:
-          - { name: kicker, label: Small top line, type: string }
-          - { name: title, label: Heading, type: string }
-          - { name: note, label: Note under packages, type: string }
+          - { name: kicker, label: Section Kicker, type: string }
+          - { name: title, label: Section Headline, type: string }
+          - { name: note, label: Travel / Custom Note, type: string }
           - name: packages
-            label: Packages
+            label: Curated Packages
             type: object
             list: true
             fields:
-              - { name: name, label: Package name, type: string }
-              - { name: price, label: Price, type: string }
-              - { name: featured, label: Highlight this package, type: boolean }
-              - { name: coverImage, label: Cover image, type: image }
-              - { name: items, label: What's included, type: string, list: true }
+              - { name: name, label: Package Name, type: string }
+              - { name: price, label: Starting Investment, type: string }
+              - { name: featured, label: Featured Highlight Package, type: boolean }
+              - { name: coverImage, label: Package Thumbnail Image, type: image }
+              - { name: items, label: Included Features & Deliverables, type: string, list: true }
 
       - name: faq
-        label: FAQ section
+        label: FAQ Section
         type: object
         fields:
-          - { name: kicker, label: Small top line, type: string }
-          - { name: title, label: Heading, type: string }
+          - { name: kicker, label: Section Kicker, type: string }
+          - { name: title, label: Section Headline, type: string }
           - name: questions
-            label: Questions
+            label: Frequently Asked Questions
             type: object
             list: true
             fields:
@@ -142,9 +142,9 @@ content:
               - { name: a, label: Answer, type: text }
 
       - name: contact
-        label: Contact section
+        label: Contact & Date Checker Section
         type: object
         fields:
-          - { name: kicker, label: Small top line, type: string }
-          - { name: title, label: Heading, type: string }
-          - { name: lead, label: Intro paragraph, type: text }
+          - { name: kicker, label: Section Kicker, type: string }
+          - { name: title, label: Section Headline, type: string }
+          - { name: lead, label: Instructions / Lead Copy, type: text }

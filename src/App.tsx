@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Portfolio } from './components/Portfolio';
@@ -11,18 +11,47 @@ import { InquirySection } from './components/InquirySection';
 import { Footer } from './components/Footer';
 import { StickyContactBar } from './components/StickyContactBar';
 import { AiChatbot } from './components/AiChatbot';
+import { SITE_CONFIG } from './data/weddingData';
 
 export default function App() {
-  const [activeStoryIndex, setActiveStoryIndex] = useState<number | null>(null);
+  const [activeStoryId, setActiveStoryId] = useState<string | null>(null);
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const [selectedPackage, setSelectedPackage] = useState<string>('The Signature');
+  const defaultPackage = SITE_CONFIG.collections?.packages?.[0]?.name || 'The Signature';
+  const [selectedPackage, setSelectedPackage] = useState<string>(defaultPackage);
 
-  const handleOpenStory = (index: number) => {
-    setActiveStoryIndex(index);
+  // Sync with URL hash for story routing (#story/:id)
+  useEffect(() => {
+    const checkHash = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#story/')) {
+        const id = hash.replace('#story/', '').trim();
+        if (id) {
+          setActiveStoryId(id);
+          return;
+        }
+      }
+      setActiveStoryId(null);
+    };
+
+    // Check initial hash
+    checkHash();
+
+    // Listen to hash changes (back / forward navigation)
+    window.addEventListener('hashchange', checkHash);
+    return () => window.removeEventListener('hashchange', checkHash);
+  }, []);
+
+  const handleOpenStory = (id: string) => {
+    setActiveStoryId(id);
+    window.location.hash = `#story/${id}`;
   };
 
   const handleCloseStory = () => {
-    setActiveStoryIndex(null);
+    setActiveStoryId(null);
+    if (window.location.hash.startsWith('#story/')) {
+      // Remove hash without jumping page
+      window.history.pushState(null, '', window.location.pathname + window.location.search);
+    }
   };
 
   const handleCheckDateClick = (packageName?: string) => {
@@ -47,7 +76,7 @@ export default function App() {
         {/* Hero Section */}
         <Hero onCheckDateClick={() => handleCheckDateClick()} />
 
-        {/* The Work / Portfolio (12-column asymmetric grid) */}
+        {/* The Work / Portfolio (Dynamic from JSON) */}
         <Portfolio onOpenStory={handleOpenStory} />
 
         {/* Google Reviews */}
@@ -69,15 +98,15 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Fullscreen Story Reader & Lightbox Modal */}
+      {/* Dedicated Story Inner Page & Lightbox View */}
       <StoryView
-        storyIndex={activeStoryIndex}
+        storyId={activeStoryId}
         onClose={handleCloseStory}
         onSelectStory={handleOpenStory}
         onCheckDateClick={handleCheckDateClick}
       />
 
-      {/* Floating Action Buttons (Ask Lumé, Call, WhatsApp) */}
+      {/* Floating Action Buttons */}
       <StickyContactBar
         onToggleChat={() => setIsChatOpen(!isChatOpen)}
         isChatOpen={isChatOpen}

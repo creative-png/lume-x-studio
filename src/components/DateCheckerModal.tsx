@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { STUDIO_INFO } from '../data/weddingData';
-import { X, Calendar, MapPin, CheckCircle, MessageCircle, Sparkles } from 'lucide-react';
+import { SITE_CONFIG } from '../data/weddingData';
+import { X, CheckCircle, MessageCircle } from 'lucide-react';
 
 interface DateCheckerModalProps {
   isOpen: boolean;
@@ -13,7 +13,6 @@ export const DateCheckerModal: React.FC<DateCheckerModalProps> = ({
   isOpen,
   onClose,
   prefilledLocation = '',
-  prefilledPackage = ''
 }) => {
   const [date, setDate] = useState('');
   const [destination, setDestination] = useState(prefilledLocation || 'Udaipur, Rajasthan');
@@ -27,9 +26,13 @@ export const DateCheckerModal: React.FC<DateCheckerModalProps> = ({
     setChecked(true);
   };
 
+  const owner = SITE_CONFIG.owner;
+  const studioName = owner?.name || 'LUMÉ STUDIO';
+  const whatsappNumber = owner?.whatsappNumber || '918638683167';
+
   const handleWhatsAppBooking = () => {
-    const text = `Hi Lumé Studio, I'm checking availability for our wedding on ${date || 'the upcoming season'} in ${destination}. Couple: ${coupleNames || 'Two of us'}. Could you let us know if you have dates open?`;
-    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(text)}`, '_blank');
+    const text = `Hi ${studioName}, I'm checking availability for our wedding on ${date || 'the upcoming season'} in ${destination}. Couple: ${coupleNames || 'Two of us'}. Could you let us know if you have dates open?`;
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
     onClose();
   };
 
@@ -45,7 +48,7 @@ export const DateCheckerModal: React.FC<DateCheckerModalProps> = ({
           <X size={20} />
         </button>
 
-        <div className="mb-6">
+        <div className="mb-6 text-left">
           <div className="text-[11px] uppercase tracking-[0.25em] text-[#C5A880] mb-2 font-medium">
             Calendar Exclusivity
           </div>
@@ -53,12 +56,12 @@ export const DateCheckerModal: React.FC<DateCheckerModalProps> = ({
             Check Your Date
           </h3>
           <p className="text-xs text-[#A39D93] mt-2 font-light leading-relaxed">
-            We photograph approximately 20 celebrations annually. Check if our team is open for your weekend.
+            We photograph a strictly limited number of celebrations each year. Check if our team is open for your weekend.
           </p>
         </div>
 
         {checked ? (
-          <div className="space-y-6 animate-in fade-in duration-300">
+          <div className="space-y-6 animate-in fade-in duration-300 text-left">
             <div className="p-4 bg-[#181613] border border-[#C5A880]/40 flex items-start gap-3">
               <CheckCircle size={18} className="text-[#C5A880] shrink-0 mt-0.5" />
               <div className="text-xs">
@@ -72,7 +75,7 @@ export const DateCheckerModal: React.FC<DateCheckerModalProps> = ({
             </div>
 
             <p className="text-xs text-[#A39D93] font-light leading-relaxed">
-              To hold the date for 48 hours and receive our full visual proposal with bespoke travel estimates, reach our studio producer:
+              To hold the date and receive our full visual proposal, reach our studio producer:
             </p>
 
             <div className="space-y-3">
@@ -97,7 +100,7 @@ export const DateCheckerModal: React.FC<DateCheckerModalProps> = ({
             </div>
           </div>
         ) : (
-          <form onSubmit={handleCheck} className="space-y-4">
+          <form onSubmit={handleCheck} className="space-y-4 text-left">
             <div>
               <label className="block text-xs uppercase tracking-[0.16em] text-[#A39D93] mb-1.5 font-medium">
                 Wedding / Event Date *

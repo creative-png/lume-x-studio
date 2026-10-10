@@ -1,158 +1,150 @@
-# ==============================================================================
-# LUMÉ STUDIO - CMS Configuration connected to siteConfig.json
-# File: src/data/page.yml
-# Target Data File: src/data/siteConfig.json
-# Format: JSON
-# ==============================================================================
+media:
+  input: src/assets/images
+  output: /src/assets/images
 
-name: "home_page"
-label: "Home Page Content"
-file: "src/data/siteConfig.json"
-path: "src/data/siteConfig.json"
-format: "json"
-extension: "json"
-media_folder: "src/assets/images"
-public_folder: "/src/assets/images"
-
-collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "src/data/siteConfig.json"
-        name: "home"
-        label: "Home Page"
-        format: "json"
-        extension: "json"
+content:
+  - name: page
+    label: Website Content
+    type: file
+    path: src/data/siteConfig.json
+    format: json
+    fields:
+      - name: owner
+        label: Studio & Business Info
+        type: object
         fields:
-          - label: "Studio Info"
-            name: "owner"
-            widget: "object"
+          - { name: name, label: Studio Name, type: string }
+          - { name: tagline, label: Studio Tagline, type: string }
+          - { name: leadPhotographer, label: Lead Photographer / Creative Direction, type: string }
+          - { name: email, label: Contact Email, type: string }
+          - { name: phone, label: Phone Number, type: string }
+          - { name: whatsappNumber, label: WhatsApp Number, type: string }
+          - { name: locations, label: Studio Locations & Travel Base, type: string }
+          - { name: instagram, label: Instagram Profile Link, type: string }
+          - { name: pinterest, label: Pinterest Profile Link, type: string }
+          - { name: vimeo, label: Vimeo Profile Link, type: string }
+          - { name: demoNote, label: Footer Disclaimer / Demo Note, type: text }
+
+      - name: hero
+        label: Hero Banner
+        type: object
+        fields:
+          - { name: kicker, label: Hero Kicker, type: string }
+          - { name: title, label: Main Headline, type: string }
+          - { name: underlineText, label: Underline Highlight Phrase, type: string }
+          - { name: lead, label: Introduction Paragraph, type: text }
+          - { name: backgroundImage, label: Hero Background Image, type: image }
+          - { name: ctaWork, label: View Work Button Label, type: string }
+          - { name: ctaDate, label: Check Date Button Label, type: string }
+          - { name: verticalMeta, label: Vertical Side Text, type: string }
+
+      - name: work
+        label: Portfolio Stories
+        type: object
+        fields:
+          - { name: kicker, label: Section Kicker, type: string }
+          - { name: title, label: Section Headline, type: string }
+          - { name: lead, label: Section Introduction, type: text }
+          - name: stories
+            label: Wedding Stories
+            type: object
+            list: true
             fields:
-              - { label: "Studio Name", name: "name", widget: "string" }
-              - { label: "Tagline", name: "tagline", widget: "string" }
-              - { label: "Lead Photographer", name: "leadPhotographer", widget: "string" }
-              - { label: "Email", name: "email", widget: "string" }
-              - { label: "Phone", name: "phone", widget: "string" }
-              - { label: "WhatsApp Number", name: "whatsappNumber", widget: "string" }
-              - { label: "Locations", name: "locations", widget: "string" }
-              - { label: "Instagram", name: "instagram", widget: "string" }
-              - { label: "Pinterest", name: "pinterest", widget: "string" }
-              - { label: "Vimeo", name: "vimeo", widget: "string" }
-              - { label: "Demo Note", name: "demoNote", widget: "string" }
-          - label: "Hero Section"
-            name: "hero"
-            widget: "object"
-            fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Underline Text", name: "underlineText", widget: "string" }
-              - { label: "Lead Text", name: "lead", widget: "text" }
-              - { label: "Background Image", name: "backgroundImage", widget: "image" }
-              - { label: "CTA Work Button", name: "ctaWork", widget: "string" }
-              - { label: "CTA Date Button", name: "ctaDate", widget: "string" }
-              - { label: "Vertical Meta", name: "verticalMeta", widget: "string" }
-          - label: "The Work"
-            name: "work"
-            widget: "object"
-            fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Lead Text", name: "lead", widget: "text" }
-              - label: "Stories"
-                name: "stories"
-                widget: "list"
+              - { name: id, label: Story ID / URL Slug, type: string }
+              - { name: number, label: Story Number, type: string }
+              - { name: couple, label: Couple Names, type: string }
+              - { name: location, label: Venue & Location, type: string }
+              - { name: description, label: Card Summary Description, type: text }
+              - { name: coverImage, label: Story Cover Image, type: image }
+              - { name: coverage, label: Coverage Duration, type: string }
+              - { name: collection, label: Associated Package, type: string }
+              - { name: tagline, label: Inner Page Tagline, type: string }
+              - { name: narrative, label: Full Editorial Narrative, type: text }
+              - name: quote
+                label: Couple Testimonial Quote
+                type: object
                 fields:
-                  - { label: "ID", name: "id", widget: "string" }
-                  - { label: "Number", name: "number", widget: "string" }
-                  - { label: "Couple", name: "couple", widget: "string" }
-                  - { label: "Location", name: "location", widget: "string" }
-                  - { label: "Description", name: "description", widget: "text" }
-                  - { label: "Cover Image", name: "coverImage", widget: "image" }
-                  - { label: "Coverage", name: "coverage", widget: "string" }
-                  - { label: "Collection Package", name: "collection", widget: "string" }
-                  - { label: "Tagline", name: "tagline", widget: "string" }
-                  - { label: "Narrative", name: "narrative", widget: "text" }
-                  - label: "Quote"
-                    name: "quote"
-                    widget: "object"
-                    fields:
-                      - { label: "Quote Text", name: "text", widget: "text" }
-                      - { label: "Author", name: "author", widget: "string" }
-                  - label: "Gallery Images"
-                    name: "galleryImages"
-                    widget: "list"
-                    fields:
-                      - { label: "Image URL", name: "url", widget: "image" }
-                      - { label: "Caption", name: "caption", widget: "string" }
-          - label: "Google Reviews"
-            name: "reviews"
-            widget: "object"
-            fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
-              - { label: "Rating", name: "rating", widget: "string" }
-              - { label: "Stars", name: "stars", widget: "string" }
-              - { label: "Total Reviews Count", name: "totalCount", widget: "number", value_type: "int" }
-              - { label: "Subtitle", name: "subtitle", widget: "string" }
-              - label: "Review List"
-                name: "list"
-                widget: "list"
+                  - { name: text, label: Quote Text, type: text }
+                  - { name: author, label: Quote Author Attribution, type: string }
+              - name: galleryImages
+                label: Story Gallery Photographs
+                type: object
+                list: true
                 fields:
-                  - { label: "ID", name: "id", widget: "string" }
-                  - { label: "Client Name", name: "name", widget: "string" }
-                  - { label: "Time Ago", name: "timeAgo", widget: "string" }
-                  - { label: "Review Text", name: "text", widget: "text" }
-          - label: "Why Lumé"
-            name: "why"
-            widget: "object"
+                  - { name: url, label: Photograph Image, type: image }
+                  - { name: caption, label: Photograph Caption, type: string }
+
+      - name: reviews
+        label: Google Reviews
+        type: object
+        fields:
+          - { name: kicker, label: Section Kicker, type: string }
+          - { name: rating, label: Star Rating Score, type: string }
+          - { name: stars, label: Star Symbols, type: string }
+          - { name: totalCount, label: Total Review Count, type: number }
+          - { name: subtitle, label: Rating Subtitle, type: string }
+          - name: list
+            label: Client Reviews
+            type: object
+            list: true
             fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - label: "Moments"
-                name: "moments"
-                widget: "list"
-                field: { label: "Moment", name: "moment", widget: "string" }
-              - { label: "Conclusion", name: "conclusion", widget: "string" }
-              - label: "Process Steps"
-                name: "steps"
-                widget: "list"
-                fields:
-                  - { label: "Step Title", name: "title", widget: "string" }
-                  - { label: "Step Description", name: "description", widget: "text" }
-          - label: "Collections"
-            name: "collections"
-            widget: "object"
+              - { name: id, label: Review ID, type: string }
+              - { name: name, label: Client Name, type: string }
+              - { name: timeAgo, label: Review Time Ago, type: string }
+              - { name: text, label: Review Content, type: text }
+
+      - name: why
+        label: Why Lumé Philosophy
+        type: object
+        fields:
+          - { name: kicker, label: Section Kicker, type: string }
+          - { name: title, label: Section Headline, type: string }
+          - { name: moments, label: Observed Moments List, type: string, list: true }
+          - { name: conclusion, label: Conclusion Statement, type: string }
+          - name: steps
+            label: Process Steps
+            type: object
+            list: true
             fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Note", name: "note", widget: "string" }
-              - label: "Packages"
-                name: "packages"
-                widget: "list"
-                fields:
-                  - { label: "Package Name", name: "name", widget: "string" }
-                  - { label: "Price", name: "price", widget: "string" }
-                  - { label: "Featured", name: "featured", widget: "boolean" }
-                  - { label: "Cover Image", name: "coverImage", widget: "image" }
-                  - label: "Included Items"
-                    name: "items"
-                    widget: "list"
-                    field: { label: "Item", name: "item", widget: "string" }
-          - label: "FAQ"
-            name: "faq"
-            widget: "object"
+              - { name: title, label: Step Title, type: string }
+              - { name: description, label: Step Description, type: text }
+
+      - name: collections
+        label: Collections & Pricing
+        type: object
+        fields:
+          - { name: kicker, label: Section Kicker, type: string }
+          - { name: title, label: Section Headline, type: string }
+          - { name: note, label: Travel / Custom Note, type: string }
+          - name: packages
+            label: Curated Packages
+            type: object
+            list: true
             fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - label: "Questions"
-                name: "questions"
-                widget: "list"
-                fields:
-                  - { label: "Question", name: "q", widget: "string" }
-                  - { label: "Answer", name: "a", widget: "text" }
-          - label: "Contact Section"
-            name: "contact"
-            widget: "object"
+              - { name: name, label: Package Name, type: string }
+              - { name: price, label: Starting Investment, type: string }
+              - { name: featured, label: Featured Highlight Package, type: boolean }
+              - { name: coverImage, label: Package Thumbnail Image, type: image }
+              - { name: items, label: Included Features & Deliverables, type: string, list: true }
+
+      - name: faq
+        label: FAQ Section
+        type: object
+        fields:
+          - { name: kicker, label: Section Kicker, type: string }
+          - { name: title, label: Section Headline, type: string }
+          - name: questions
+            label: Frequently Asked Questions
+            type: object
+            list: true
             fields:
-              - { label: "Kicker", name: "kicker", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Lead Text", name: "lead", widget: "text" }
+              - { name: q, label: Question, type: string }
+              - { name: a, label: Answer, type: text }
+
+      - name: contact
+        label: Contact & Date Checker Section
+        type: object
+        fields:
+          - { name: kicker, label: Section Kicker, type: string }
+          - { name: title, label: Section Headline, type: string }
+          - { name: lead, label: Instructions / Lead Copy, type: text }

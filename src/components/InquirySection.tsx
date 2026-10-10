@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { STUDIO_INFO, SITE_CONFIG } from '../data/weddingData';
+import { SITE_CONFIG } from '../data/weddingData';
 
 interface InquirySectionProps {
   selectedPackage?: string;
 }
 
 export const InquirySection: React.FC<InquirySectionProps> = ({ selectedPackage }) => {
-  const { contact, owner } = SITE_CONFIG;
+  const { contact, owner, collections } = SITE_CONFIG;
+
+  const packageNames = (collections?.packages || []).map((p) => p.name).filter(Boolean);
 
   const [names, setNames] = useState('');
   const [date, setDate] = useState('');
@@ -22,24 +24,34 @@ export const InquirySection: React.FC<InquirySectionProps> = ({ selectedPackage 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `Hi ${owner.name}! We're ${names || 'a couple'}. Wedding date: ${date || 'TBD'}. Venue: ${venue || 'TBD'}. Collection: ${collection}. ${about}`;
-    window.open(`https://wa.me/${owner.whatsappNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+    const studioName = owner?.name || 'LUMÉ STUDIO';
+    const waNumber = owner?.whatsappNumber || '918638683167';
+    const msg = `Hi ${studioName}! We're ${names || 'a couple'}. Wedding date: ${date || 'TBD'}. Venue: ${venue || 'TBD'}. Collection: ${collection}. ${about}`;
+    window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
   };
+
+  const phoneUrl = owner?.phone ? `tel:${owner.phone.replace(/\s+/g, '')}` : null;
 
   return (
     <section id="contact" className="py-8 sm:py-12 md:py-18 bg-[#1f1824] text-[#f3eee8] text-center">
       <div className="max-w-[1100px] mx-auto px-3.5 sm:px-6">
-        <p className="text-sm sm:text-base uppercase tracking-[0.18em] text-[#d9b8a3] mb-2 font-medium inline-block border-b-2 border-[#d9b8a3] pb-0.5">
-          {contact.kicker}
-        </p>
+        {contact?.kicker && (
+          <p className="text-sm sm:text-base uppercase tracking-[0.18em] text-[#d9b8a3] mb-2 font-medium inline-block border-b-2 border-[#d9b8a3] pb-0.5">
+            {contact.kicker}
+          </p>
+        )}
 
-        <h2 className="font-serif text-[24px] sm:text-[34px] md:text-[42px] font-light leading-[1.12] max-w-[16ch] text-[#f3eee8] mx-auto mb-3 sm:mb-4">
-          {contact.title}
-        </h2>
+        {contact?.title && (
+          <h2 className="font-serif text-[24px] sm:text-[34px] md:text-[42px] font-light leading-[1.12] max-w-[16ch] text-[#f3eee8] mx-auto mb-3 sm:mb-4">
+            {contact.title}
+          </h2>
+        )}
 
-        <p className="text-[#b4a9b0] text-[13px] sm:text-[15px] leading-relaxed max-w-[46ch] mx-auto mb-5 sm:mb-7 font-light">
-          {contact.lead}
-        </p>
+        {contact?.lead && (
+          <p className="text-[#b4a9b0] text-[13px] sm:text-[15px] leading-relaxed max-w-[46ch] mx-auto mb-5 sm:mb-7 font-light">
+            {contact.lead}
+          </p>
+        )}
 
         {/* Clean Compact Form */}
         <form
@@ -100,9 +112,11 @@ export const InquirySection: React.FC<InquirySectionProps> = ({ selectedPackage 
               className="w-full bg-[#17111a] border border-[#3a2f40] text-[#f3eee8] p-2.5 text-[13.5px] sm:text-sm rounded-none focus:outline-none focus:border-[#d9b8a3] transition-colors cursor-pointer"
             >
               <option value="Not sure yet">Not sure yet</option>
-              <option value="The Signature">The Signature</option>
-              <option value="The Editorial">The Editorial</option>
-              <option value="The Intimate">The Intimate</option>
+              {packageNames.map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -130,20 +144,24 @@ export const InquirySection: React.FC<InquirySectionProps> = ({ selectedPackage 
           </div>
         </form>
 
-        {/* Direct CTA Buttons */}
+        {/* Direct Contact Buttons */}
         <div className="flex flex-row items-center justify-center gap-3 flex-wrap">
-          <a
-            href={`mailto:${owner.email}`}
-            className="px-4 py-2 border border-[#d9b8a3] text-[#f3eee8] text-[11.5px] sm:text-xs tracking-[0.08em] hover:bg-[#d9b8a3] hover:text-[#17111a] transition-colors"
-          >
-            {owner.email}
-          </a>
-          <a
-            href={STUDIO_INFO.phoneUrl}
-            className="px-4 py-2 border border-[#d9b8a3] text-[#f3eee8] text-[11.5px] sm:text-xs tracking-[0.08em] hover:bg-[#d9b8a3] hover:text-[#17111a] transition-colors"
-          >
-            {owner.phone}
-          </a>
+          {owner?.email && (
+            <a
+              href={`mailto:${owner.email}`}
+              className="px-4 py-2 border border-[#d9b8a3] text-[#f3eee8] text-[11.5px] sm:text-xs tracking-[0.08em] hover:bg-[#d9b8a3] hover:text-[#17111a] transition-colors"
+            >
+              {owner.email}
+            </a>
+          )}
+          {owner?.phone && phoneUrl && (
+            <a
+              href={phoneUrl}
+              className="px-4 py-2 border border-[#d9b8a3] text-[#f3eee8] text-[11.5px] sm:text-xs tracking-[0.08em] hover:bg-[#d9b8a3] hover:text-[#17111a] transition-colors"
+            >
+              {owner.phone}
+            </a>
+          )}
         </div>
       </div>
     </section>
