@@ -33,7 +33,7 @@
         "couple": "Amara & Veer",
         "location": "Umaid Bhawan Palace, Jodhpur",
         "description": "A three-day celebration surrounded by sandstone architecture, candlelight and family traditions.",
-        "coverImage": "/src/assets/images/jodhpur_baraat_1790951596622.jpg",
+        "coverImage": "/src/assets/images/couple.jpg",
         "coverage": "Three days",
         "collection": "The Signature",
         "tagline": "Sandstone architecture, candlelight and three generations gathered.",
@@ -44,7 +44,7 @@
         },
         "galleryImages": [
           {
-            "url": "/src/assets/images/wedding_amara_jodhpur_1790871722386.jpg",
+            "url": "/src/assets/images/couple.jpg",
             "caption": "The twilight phera ceremony framed by the grand sandstone arches of Umaid Bhawan."
           },
           {
@@ -149,7 +149,7 @@
         "couple": "Mira & Kabir",
         "location": "The Leela Palace, Udaipur",
         "description": "An intimate evening ceremony filled with ivory florals, music and candlelight.",
-        "coverImage": "/src/assets/images/udaipur_boat_1790951620846.jpg",
+        "coverImage": "/src/assets/images/p2.jpg",
         "coverage": "One evening",
         "collection": "The Intimate",
         "tagline": "Ivory tuberoses, floating candlelight and whispered vows over Lake Pichola.",
